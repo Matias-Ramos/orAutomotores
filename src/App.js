@@ -1,11 +1,13 @@
-import './App.css';
+import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HeaderContainer from './containers/HeaderContainer';
+import Header from './components/presentationals/Header';
+import GaleryContainer from './components/containers/GaleryContainer';
 
 function App() {
   return (
     <>
-      <HeaderContainer />
+      <Header />
+      <GaleryContainer />
     </>
   );
 }
