@@ -4,10 +4,12 @@ function CardListGroup({car}) {
     return (
         <>
           {
-            <ListGroup horizontal='md' className="my-2" >
-              <ListGroup.Item>Año: {car.year}</ListGroup.Item>
-              <ListGroup.Item>${car.price}</ListGroup.Item>
-              <ListGroup.Item>{car.km}km</ListGroup.Item>
+            <ListGroup className="mt-2" >
+              <ListGroup.Item>
+                <b>$ {car.price}</b>
+                <br />
+                <i>{car.year} | {car.km} Km</i>
+              </ListGroup.Item>
             </ListGroup>
           }
         </>

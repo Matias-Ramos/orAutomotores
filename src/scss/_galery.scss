@@ -3,7 +3,7 @@
     margin-bottom:3.5rem;
     box-shadow: -5px 6px 5px #aaaaaa;
     .card-body{
-        padding:1rem 0px;
+        padding:1rem 0px 0px 0px;
         .list-group{
             background-color:#d9d9d9;
             border-radius:0px;
@@ -12,8 +12,16 @@
                 background-color:#d9d9d9;
             }
         }
-        .logoML{
-            height:50px
+        .containerML{
+            padding: 1.5rem 0 1rem 0;
+            .logoML{
+                height:50px
+            }
+            &:hover
+            {
+                background-color: #e9ecef;
+                transition: 0.4s;
+            }
         }
     }
 }
