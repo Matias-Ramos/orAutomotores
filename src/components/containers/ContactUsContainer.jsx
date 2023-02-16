@@ -12,7 +12,7 @@ function ContactUsContainer() {
 
             {/* String Data */}
             <Row>
-              <Col sm={12} md={12} lg={7} xl={7} xxl={8} id="contactDataContainer">
+              <Col sm={12} md={12} lg={5} xl={5} xxl={6} id="contactDataContainer">
                   <div>
                     <h2>Contacto</h2>
                     <ContactUl />

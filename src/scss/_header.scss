@@ -1,0 +1,63 @@
+#headerSection::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+}
+#headerSection 
+{
+    position: relative; 
+    .row{
+        justify-content: flex-start;
+        align-items: center;
+        h1{
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            position: relative;
+        }
+        img{
+            height: auto;
+            position: relative;
+        } 
+    }
+}
+
+
+
+/***********************/
+/*Tablets and phones*/
+@media only screen and (max-width: 992px)
+{
+    #headerSection::before{
+        background-image: url("../assets/fondoclaro.jpg");
+        background-position: -10px -500px;
+    }
+    #logoContainer{
+        display: flex;
+        justify-content: center;
+        img{
+            width: 50%;
+        }
+    }
+}
+
+/***********************/
+/*Tablets, Laptops and Desktops*/
+@media only screen and (min-width: 576px)
+{
+    #headerSection::before{
+        background-image: url("../assets/fondo3.png");
+        background-position: 0px -200px;
+        background-size: cover;
+    }
+    #headerSection 
+    {
+        h1{text-align:left}
+        img{
+            width: 100%;
+        }
+    }
+}

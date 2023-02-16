@@ -29,23 +29,21 @@ function GaleryContainer() {
   return (
     <section id="galerySection">
        <Container fluid>
-            {/* header2 */}
             <Row>
-                <Col >
-                    <h2>Vehículos en stock</h2>
-                </Col>
-            </Row>
-            {/* Cards */}
-            <Row>
-              <Col sm={12} md={12} lg={5} xl={4} xxl={4}>
+              
+              {/* Filters */}
+              <Col sm={11} md={11} lg={5} xl={4} xxl={3} className="galeryCols">
                 Filtros
                 <br />
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum beatae doloremque quia ipsa ad assumenda velit quaerat, tenetur sunt neque! Mollitia ratione, quos debitis libero cumque veritatis tenetur maiores porro!
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum beatae doloremque quia ipsa ad assumenda velit quaerat, tenetur sunt neque! Mollitia ratione, quos debitis libero cumque veritatis tenetur maiores porro!
               </Col>
-              <Col sm={12} md={12} lg={7} xl={7} xxl={7}>
+
+              {/* Cards */}
+              <Col sm={11} md={11} lg={7} xl={7} xxl={6} className="galeryCols">
                   <GaleryMapper arrayOfCars={arrayOfCars} />
               </Col>
+
             </Row>
         </Container>
     </section>

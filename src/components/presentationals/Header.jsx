@@ -8,16 +8,16 @@ import Image from 'react-bootstrap/Image'
 
 function Header() {
   return (
-    <header>
+    <header id="headerSection">
         <Container fluid>
             <Row>
                 {/* Img */}
-                <Col sm={3} md={3} lg={4} xl={5} xxl={5} >
-                    <Image fluid src={logo} alt="Logo de or automotores"/>
+                <Col sm={3} md={3} lg={3} xl={2} xxl={1} id="logoContainer">
+                    <Image src={logo} alt="Logo de or automotores"/>
                 </Col>
                 {/* H1 */}
-                <Col sm={12} md={12} lg={8} xl={7} xxl={7} className='centerContent' >
-                    <h1>Compra-Venta de vehiculos</h1>
+                <Col sm={9} md={9} lg={7} xl={7} xxl={6}>
+                    <h1>Compra-Venta de vehículos</h1>
                 </Col>
             </Row>
         </Container>
