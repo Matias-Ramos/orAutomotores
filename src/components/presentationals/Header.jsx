@@ -16,7 +16,7 @@ function Header() {
                     <Image fluid src={logo} alt="Logo de or automotores"/>
                 </Col>
                 {/* H1 */}
-                <Col sm={12} md={12} lg={12} xl={7} xxl={7} className='centerContent' >
+                <Col sm={12} md={12} lg={8} xl={7} xxl={7} className='centerContent' >
                     <h1>Compra-Venta de vehiculos</h1>
                 </Col>
             </Row>

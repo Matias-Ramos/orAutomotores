@@ -30,7 +30,17 @@
 /*Tablets, Laptops and Desktops*/
 @media only screen and (min-width: 768px)
 {
-    .list-group{
-        justify-content: space-around;
+    #galerySection{
+        .row:nth-child(2){
+            border:1px solid red;
+            justify-content: space-around;
+            .col-sm-12{
+                border:1px solid blue;
+            }
+        }
+        .list-group{
+            justify-content: space-around;
+        }
     }
+
 }
