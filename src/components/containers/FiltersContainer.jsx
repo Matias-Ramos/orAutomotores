@@ -5,11 +5,13 @@ import YearsFilter from "../presentationals/YearsFilter"
 
 function GaleryFilterContainer() {
   return (
-    <>
-    <KmFilter />
-    <PriceFilter />
-    <YearsFilter />
-    </>
+    <div id="filtersContainer">
+      <KmFilter />
+      <PriceFilter />
+      <span><b>Año</b><br /></span>
+      <YearsFilter type="Desde" />
+      <YearsFilter type="Hasta" />
+    </div>
   )
 }
 

@@ -8,7 +8,7 @@ function CarCard({car}) {
     <Card className="card">
         <Card.Img variant="top" src={ require('../../assets/vehicles/'+car.imgName)} />
         <Card.Body>
-            <Card.Title>{car.title}</Card.Title>
+            <Card.Title as="h2" className="my-4">{car.title}</Card.Title>
             <CardListGroup car={car} />
             <ML />
         </Card.Body>

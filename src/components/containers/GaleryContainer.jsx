@@ -33,7 +33,7 @@ function GaleryContainer() {
             <Row>
               
               {/* Filters */}
-              <Col sm={11} md={11} lg={5} xl={4} xxl={3} className="galeryCols">
+              <Col sm={11} md={11} lg={4} xl={4} xxl={3} className="galeryCols">
                 <FiltersContainer />
               </Col>
 
