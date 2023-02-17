@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 //Components
 import GaleryMapper from '../mappers/GaleryMapper';
+import FiltersContainer from './FiltersContainer';
 //Data
 import stock from '../../data/stock.json'
 //Hooks
@@ -33,10 +34,7 @@ function GaleryContainer() {
               
               {/* Filters */}
               <Col sm={11} md={11} lg={5} xl={4} xxl={3} className="galeryCols">
-                Filtros
-                <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum beatae doloremque quia ipsa ad assumenda velit quaerat, tenetur sunt neque! Mollitia ratione, quos debitis libero cumque veritatis tenetur maiores porro!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum beatae doloremque quia ipsa ad assumenda velit quaerat, tenetur sunt neque! Mollitia ratione, quos debitis libero cumque veritatis tenetur maiores porro!
+                <FiltersContainer />
               </Col>
 
               {/* Cards */}
