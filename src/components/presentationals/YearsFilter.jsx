@@ -4,18 +4,25 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { useSearchParams } from "react-router-dom";
+
+
+let carPossibleYears = []
+for(let i = new Date().getFullYear(); i >= 1980; i--) {
+  carPossibleYears.push(i)
+}
 
 export default function YearsFilter({type}) {
   
+  // updates the state for the Select value and also sets the queryParams (using regular var, not the state)
+  const [params, setParams] = useSearchParams();
   const [year, setYear] = React.useState('');
-  const handleChange = (event) => {
+  const handleChange = event => {
     setYear(event.target.value);
+    const queryParamName = (type === "Desde") ? "from" : "to";
+    params.set(queryParamName, event.target.value);
+    setParams(params);
   };
-
-  let carPossibleYears = []
-  for(let i = new Date().getFullYear(); i >= 1980; i--) {
-    carPossibleYears.push(i)
-  }
 
   return (
     <Box sx={{ minWidth: 120 }}>

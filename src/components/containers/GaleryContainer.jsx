@@ -11,21 +11,22 @@ import stock from '../../data/stock.json'
 import {useState, useEffect} from "react";
 
 function GaleryContainer() {
+ 
+  /* List of cars */
+  // state-variable
+  const [arrayOfCars , setCarsList] = useState([]);
+  useEffect( () => {
+      //promise
+      const promise = new Promise ( (resolve, reject) => {
+          setTimeout( () => resolve(stock), 500);
+      } )
+      //promise assignment to state-variable
+      promise.then( dataFromPromise => {
+        setCarsList(dataFromPromise);
+      } );
+  }, [] )
 
-    //state-variable
-    const [arrayOfCars , setCarsList] = useState([]);
 
-    useEffect( () => {
-        //promise
-        const promise = new Promise ( (resolve, reject) => {
-            setTimeout( () => resolve(stock), 500);
-        } )
-        //promise assignment to state-variable
-        promise.then( dataFromPromise => {
-          setCarsList(dataFromPromise);
-        } );
-
-    }, [] )
 
   return (
     <section id="galerySection">
