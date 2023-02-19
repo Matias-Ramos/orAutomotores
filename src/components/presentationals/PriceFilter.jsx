@@ -1,23 +1,15 @@
+//Components
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-import { useSearchParams } from "react-router-dom";
 
-function makePriceReadable(value) {
-  value = value.toLocaleString().replace(",", ".").replace(",", ".");
-  value = "$ " + value;
-  return value;
-}
-
-export default function PriceFilter() {
-  const highestValue = 7000000;
-  const lowestValue = 500000;
-
-  const [params, setParams] = useSearchParams();
-  const handleChange = (_event, newValue) => {
-    params.set("price", newValue);
-    setParams(params);
+export default function PriceFilter(props) {
+  const handleChange = (evt) => {
+    props.updateQyParams("price", evt.target.value);
   };
-
+  //accessibility
+  function valuetext(value) {
+    return `$${value}`;
+  }
   return (
     <div>
       <span>
@@ -27,15 +19,17 @@ export default function PriceFilter() {
       <Box sx={{ width: "100%" }}>
         <Slider
           aria-label="Precio"
-          defaultValue={highestValue}
-          getAriaValueText={makePriceReadable}
-          valueLabelFormat={ value => <div> {makePriceReadable(value)} </div>}
+          defaultValue={props.highestValue}
+          getAriaValueText={valuetext}
+          valueLabelFormat={(value) => (
+            <div> {props.makePriceReadable(value)} </div>
+          )}
           valueLabelDisplay="auto"
           onChange={handleChange}
-          step={lowestValue}
+          step={props.lowestValue}
           marks
-          min={lowestValue}
-          max={highestValue}
+          min={props.lowestValue}
+          max={props.highestValue}
         />
       </Box>
     </div>
