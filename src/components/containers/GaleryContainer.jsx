@@ -5,27 +5,11 @@ import Col from "react-bootstrap/Col";
 // Components
 import GaleryMapper from "../mappers/GaleryMapper";
 import FiltersContainer from "./FiltersContainer";
-// Data
-import stock from "../../data/stock.json";
-// Hooks
-import { useState, useEffect } from "react";
 // Context
 import { QyParamsCtxtProvider } from "../../context/QyParamsCtxt.jsx";
 
 function GaleryContainer() {
-  /* List of cars */
-  // state-variable
-  const [arrayOfCars, setCarsList] = useState([]);
-  useEffect(() => {
-    //promise
-    const promise = new Promise((resolve, reject) => {
-      setTimeout(() => resolve(stock), 500);
-    });
-    //promise assignment to state-variable
-    promise.then((dataFromPromise) => {
-      setCarsList(dataFromPromise);
-    });
-  }, []);
+
 
   return (
     <section id="galerySection">
@@ -40,7 +24,7 @@ function GaleryContainer() {
 
           {/* Cards */}
           <Col sm={11} md={11} lg={7} xl={7} xxl={6} className="galeryCols">
-            <GaleryMapper arrayOfCars={arrayOfCars} />
+            <GaleryMapper  />
           </Col>
         </Row>
       </Container>
