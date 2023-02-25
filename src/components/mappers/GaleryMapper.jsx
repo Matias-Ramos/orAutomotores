@@ -1,8 +1,6 @@
 import CarCard from "../presentationals/CarCard"
 
 function GaleryMapper({stock}) { 
-
-
     return (
         <>{
             stock.map( car => {
