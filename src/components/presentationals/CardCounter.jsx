@@ -1,7 +1,7 @@
 function CardCounter( {qtyOfCars} ) {
   return (
-    <div className="mt-2" style={{ 'paddingLeft': '0.8rem' }}>
-        Resultados: {qtyOfCars}
+    <div id='cardCounter'>
+        Resultados: {qtyOfCars} 
     </div>
   )
 }
