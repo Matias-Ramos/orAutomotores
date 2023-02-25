@@ -7,8 +7,6 @@
     color:white;
     padding:2rem 0 2rem 0;
     .row{
-        display:flex;
-        justify-content: space-around;
         #contactDataContainer{
             ul{
                 padding-left:0.2rem;
@@ -18,10 +16,6 @@
                 }
             }
         }
-        iframe{
-            width: 100%;
-            height: 350px;
-        }
     }
 }
 
@@ -29,12 +23,27 @@
 /*Laptops and desktops*/
 @media only screen and (min-width: 992px)
 {
-    #contactDataContainer{
-        padding: 3rem 0;
-        display: flex;
-        align-items: center;
-        div{
-            margin-left:3rem
+    #contactSection{
+        background-image: url('../assets/fondoclaro.jpg');
+        background-size:cover;
+        background-position:center;
+        position: relative;
+        min-height: 20rem;
+        #contactDataContainer{
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height:100%;
+            background-image: linear-gradient(to right,
+            rgba(0,0,0,0.9),
+            rgba(0,0,0,0.6),
+            rgba(0,0,0,0.2));
+            div{
+                margin-left:3rem
+            }
         }
     }
 }
@@ -45,7 +54,7 @@
 {
     #contactDataContainer 
     {
-        padding: 1.5rem 0;
+        padding: 1.5rem 0 0 0;
         div{
             text-align:center;
         }
