@@ -1,0 +1,26 @@
+#signatureSection{
+    background-color: #4b4e58;
+    color: #a99985;
+    a{
+        color: #a99985;
+    }
+}
+
+/***********************/
+/*Laptops and desktops*/
+@media only screen and (min-width: 992px)
+{
+    #signatureSection{
+        text-align: right;
+        padding-right:1rem;
+    }
+}
+
+/***********************/
+/*Tablets and phones*/
+@media only screen and (max-width: 992px)
+{
+    #signatureSection{
+        text-align: center;
+    }
+}

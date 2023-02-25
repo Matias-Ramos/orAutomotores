@@ -3,8 +3,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 // Components
-import GaleryMapper from "../mappers/GaleryMapper";
-import FiltersContainer from "./FiltersContainer";
+import GaleryMapper from "../mappers/GaleryMapper.jsx";
+import FiltersContainer from "./FiltersContainer.jsx";
+import CardCounter from "../presentationals/CardCounter.jsx";
 // Context
 import { QyParamsCtxtProvider } from "../../context/QyParamsCtxt.jsx";
 //Hooks
@@ -16,6 +17,7 @@ function GaleryContainer() {
   const { search } = useLocation();
   const query = useMemo(() => new URLSearchParams(search), [search]);
 
+  //refreshes the stock based on the query params
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(`/data/stock.json`); //from public
@@ -23,11 +25,9 @@ function GaleryContainer() {
       setStock(newData); //brings an unfiltered list on every queryparam update
       filterData(); //then filters based on query params
     };
-    fetchData();
-
-    function filterByKm(chosenKm, arrayOfCars) {
+    function filterByKm(rangeKm, arrayOfCars) {
       let result = [];
-      switch (chosenKm) {
+      switch (rangeKm) {
         case "0":
           result = arrayOfCars.filter((car) => car.km === 0);
           break;
@@ -43,7 +43,7 @@ function GaleryContainer() {
           result = arrayOfCars.filter((car) => car.km >= 0);
           break;
         default:
-          throw new Error(`Cannot filter by Km. $chosenKm value is: ${chosenKm}.\n
+          throw new Error(`Cannot filter by Km. $rangeKm value is: ${rangeKm}.\n
               Check the range is contemplated in the filterByKm function`);
       }
       return result;
@@ -75,6 +75,8 @@ function GaleryContainer() {
         }
       });
     };
+
+    fetchData();
   }, [query]);
 
   return (
@@ -86,6 +88,7 @@ function GaleryContainer() {
             <QyParamsCtxtProvider>
               <FiltersContainer />
             </QyParamsCtxtProvider>
+            <CardCounter qtyOfCars={stock.length} />
           </Col>
 
           {/* Cards */}

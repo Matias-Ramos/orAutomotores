@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/presentationals/Header.jsx';
 import GaleryContainer from './components/containers/GaleryContainer.jsx';
 import ContactUsContainer from './components/containers/ContactUsContainer.jsx';
+import Signature from './components/containers/Signature';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/search" element={<GaleryContainer />}/>
         </Routes>
       <ContactUsContainer />
+      <Signature />
     </BrowserRouter>
     </>
   );
