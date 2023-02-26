@@ -14,7 +14,7 @@ function QyParamsCtxtProvider(props) {
   }
 
   return(
-  <queryCtxt.Provider value={ {updateQyParams: updateQyParams } }>      
+  <queryCtxt.Provider value={ {updateQyParams: updateQyParams, params:params } }>      
     {props.children} 
   </queryCtxt.Provider>
   )

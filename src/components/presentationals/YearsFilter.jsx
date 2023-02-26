@@ -4,14 +4,11 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-// Hook
-import { useState } from "react";
+
 
 export default function YearsFilter(props) {
-  const [year, setYear] = useState("");
 
   const handleChange = (evt) => {
-    setYear(evt.target.value);
     const queryParamName = props.type === "Desde" ? "from" : "up_to";
     props.updateQyParams(queryParamName, evt.target.value);
   };
@@ -23,7 +20,7 @@ export default function YearsFilter(props) {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={year}
+          value={props.yearChosenRange}
           label="Año"
           onChange={handleChange}
         >

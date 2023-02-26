@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap');
 
 #galerySection{
-    background:linear-gradient(180deg, rgba(220, 220, 220, 1) 0%, rgba(245, 241, 237, 1) 11%);
+    background:linear-gradient(135deg, rgba(220, 220, 220, 1) 0%, rgba(245, 241, 237, 1) 75%);
     min-height:30rem;
     .row{
         padding-top:2.5rem;
@@ -14,6 +14,18 @@
             padding: 1rem 1.5rem 1rem 1rem;
             border:1px solid #284b63;
             border-radius: 10px;
+            .kmSpan{
+                box-shadow: inset 0 0 0 0 #edede9;
+                padding: 0 .25rem;
+                transition: box-shadow .3s ease-in;
+            }
+            .kmSpan:hover{
+                box-shadow: inset 200px 0 0 0 #edede9;
+                cursor: pointer;
+            }
+            .activeKmRange{
+                font-weight: 500;
+            }
         }
         /* CARDS */
         .card{

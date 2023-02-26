@@ -8,7 +8,7 @@ import KmFilter from "../presentationals/KmFilter.jsx";
 import YearsFilter from "../presentationals/YearsFilter.jsx";
 
 function GaleryFilterContainer() {
-  const { updateQyParams } = useContext(queryCtxt);
+  const { updateQyParams, params } = useContext(queryCtxt);
 
   // Price matters
   const highestValue = 7000000;
@@ -25,14 +25,19 @@ function GaleryFilterContainer() {
     carPossibleYears.push(i);
   }
 
+
   return (
     <div id="filtersContainer">
-      <KmFilter updateQyParams={updateQyParams} />
+      <KmFilter 
+        updateQyParams={updateQyParams} 
+        kmChosenRange={params.get('km')}
+        />
       <PriceFilter
         updateQyParams={updateQyParams}
         makePriceReadable={makePriceReadable}
         highestValue={highestValue}
         lowestValue={lowestValue}
+        priceChosenRange={params.get('price')}
       />
       <span>
         <b>Año</b>
@@ -42,11 +47,13 @@ function GaleryFilterContainer() {
         type="Desde"
         updateQyParams={updateQyParams}
         carPossibleYears={carPossibleYears}
+        yearChosenRange={params.get('from')}
       />
       <YearsFilter
         type="Hasta"
         updateQyParams={updateQyParams}
         carPossibleYears={carPossibleYears}
+        yearChosenRange={params.get('up_to')}
       />
     </div>
   );
