@@ -19,7 +19,7 @@ export default function PriceFilter(props) {
       <Box sx={{ width: "100%" }}>
         <Slider
           aria-label="Precio"
-          defaultValue={props.priceChosenRange}
+          defaultValue={props.priceChosenRange ? parseInt(props.priceChosenRange) : props.highestValue}
           getAriaValueText={valuetext}
           valueLabelFormat={(value) => (
             <div> {props.makePriceReadable(value)} </div>

@@ -20,7 +20,7 @@ export default function YearsFilter(props) {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={props.yearChosenRange}
+          value={props.yearChosenRange ? props.yearChosenRange : ''}
           label="Año"
           onChange={handleChange}
         >

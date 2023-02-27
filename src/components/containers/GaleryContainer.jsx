@@ -9,13 +9,14 @@ import CardCounter from "../presentationals/CardCounter.jsx";
 // Context
 import { QyParamsCtxtProvider } from "../../context/QyParamsCtxt.jsx";
 //Hooks
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 function GaleryContainer() {
   const [stock, setStock] = useState([]);
   const { search } = useLocation();
   const query = useMemo(() => new URLSearchParams(search), [search]);
+  const filtersOuterContainer = useRef()
 
   //refreshes the stock based on the query params
   useEffect(() => {
@@ -79,16 +80,23 @@ function GaleryContainer() {
     fetchData();
   }, [query]);
 
+  useEffect(()=>{
+    filtersOuterContainer.current.scrollIntoView( {behavior: "smooth", block: "start"});
+  }
+  ,[stock])
+
   return (
-    <section id="galerySection">
+    <section id="galerySection" ref={filtersOuterContainer}>
       <Container fluid>
         <Row>
           {/* Filters */}
           <Col sm={11} md={11} lg={4} xl={4} xxl={3} className="galeryCols">
-            <QyParamsCtxtProvider>
-              <FiltersContainer />
-            </QyParamsCtxtProvider>
-            <CardCounter qtyOfCars={stock.length} />
+            <div id='filtersOuterContainer'>
+              <QyParamsCtxtProvider>
+                <FiltersContainer />
+              </QyParamsCtxtProvider>
+              <CardCounter qtyOfCars={stock.length} />
+            </div>
           </Col>
 
           {/* Cards */}

@@ -10,7 +10,7 @@
         .MuiBox-root{ display: inline-block; }
         // avoids .MuiSlider-valueLabelOpen to be covered by the cards in tablet view
         .MuiSlider-root{ z-index: 2; }
-        #filtersContainer{
+        #filtersInnerContainer{
             padding: 1rem 1.5rem 1rem 1rem;
             border:1px solid #284b63;
             border-radius: 10px;
@@ -85,6 +85,12 @@
 {
     #galerySection .row{
         justify-content: space-around;
+        #filtersOuterContainer{
+            position: -webkit-sticky;
+            position: sticky;
+            top: 2rem;
+            margin-bottom:3.5rem; // matches margin-bottom card so they end at the same place of the section
+        }
         #cardCounter{
             margin-top:0.5rem;
             padding-left:0.6rem;

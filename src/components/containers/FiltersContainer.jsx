@@ -7,6 +7,7 @@ import PriceFilter from "../presentationals/PriceFilter.jsx";
 import KmFilter from "../presentationals/KmFilter.jsx";
 import YearsFilter from "../presentationals/YearsFilter.jsx";
 
+
 function GaleryFilterContainer() {
   const { updateQyParams, params } = useContext(queryCtxt);
 
@@ -25,9 +26,8 @@ function GaleryFilterContainer() {
     carPossibleYears.push(i);
   }
 
-
   return (
-    <div id="filtersContainer">
+    <div id="filtersInnerContainer">
       <KmFilter 
         updateQyParams={updateQyParams} 
         kmChosenRange={params.get('km')}
