@@ -13,7 +13,7 @@
         #filtersInnerContainer{
             padding: 1rem 1.5rem 1rem 1rem;
             border:1px solid #284b63;
-            border-radius: 10px;
+            border-radius: 10px 10px 0px 0px;
             .kmSpan{
                 box-shadow: inset 0 0 0 0 #edede9;
                 padding: 0 .25rem;
@@ -64,6 +64,28 @@
                 }
             }
         }
+        #filterBottomBtns{
+            display: flex;
+            .filterBtn{
+                width: 50%;
+                //filterCleaner
+                &:nth-child(1){
+                    border-radius: 0px 0px 0px 10px;
+                    border-right:0px;
+                    border-top:0px;
+                }
+                //cardCounter
+                &:nth-child(2){
+                    border: 1px solid black;
+                    border-top:0px;
+                    border-radius: 0px 0px 10px 0px;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: default;
+                }
+            }
+        }
     }
 }
 
@@ -73,10 +95,7 @@
 {
     #galerySection .row{
         justify-content: center;
-        #cardCounter{
-            text-align: center;
-            margin-bottom:2rem;
-        }
+
     }
 }
 /***********************/
@@ -90,10 +109,6 @@
             position: sticky;
             top: 2rem;
             margin-bottom:3.5rem; // matches margin-bottom card so they end at the same place of the section
-        }
-        #cardCounter{
-            margin-top:0.5rem;
-            padding-left:0.6rem;
         }
     }
 }

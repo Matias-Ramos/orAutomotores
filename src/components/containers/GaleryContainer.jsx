@@ -5,18 +5,23 @@ import Col from "react-bootstrap/Col";
 // Components
 import GaleryMapper from "../mappers/GaleryMapper.jsx";
 import FiltersContainer from "./FiltersContainer.jsx";
-import CardCounter from "../presentationals/CardCounter.jsx";
+import FilterBottomBtns from "./FilterBottomBtns.jsx";
 // Context
 import { QyParamsCtxtProvider } from "../../context/QyParamsCtxt.jsx";
 //Hooks
 import { useState, useEffect, useMemo, useRef } from "react";
 import { useLocation } from "react-router-dom";
+import useMediaQuery from '@mui/material/useMediaQuery';
+
+
+
 
 function GaleryContainer() {
   const [stock, setStock] = useState([]);
   const { search } = useLocation();
   const query = useMemo(() => new URLSearchParams(search), [search]);
   const filtersOuterContainer = useRef()
+  const desktopVp = useMediaQuery('(min-width:992px)');
 
   //refreshes the stock based on the query params
   useEffect(() => {
@@ -80,10 +85,12 @@ function GaleryContainer() {
     fetchData();
   }, [query]);
 
+  // moves scroll top when filters are used on desktop viewport
   useEffect(()=>{
-    filtersOuterContainer.current.scrollIntoView( {behavior: "smooth", block: "start"});
+    desktopVp && filtersOuterContainer.current.scrollIntoView( {behavior: "smooth", block: "start"});
   }
-  ,[stock])
+  ,[stock, desktopVp])
+
 
   return (
     <section id="galerySection" ref={filtersOuterContainer}>
@@ -94,8 +101,8 @@ function GaleryContainer() {
             <div id='filtersOuterContainer'>
               <QyParamsCtxtProvider>
                 <FiltersContainer />
+                <FilterBottomBtns qtyOfCars={stock.length} />
               </QyParamsCtxtProvider>
-              <CardCounter qtyOfCars={stock.length} />
             </div>
           </Col>
 

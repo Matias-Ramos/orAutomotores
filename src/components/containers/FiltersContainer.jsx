@@ -8,7 +8,7 @@ import KmFilter from "../presentationals/KmFilter.jsx";
 import YearsFilter from "../presentationals/YearsFilter.jsx";
 
 
-function GaleryFilterContainer() {
+function FiltersContainer() {
   const { updateQyParams, params } = useContext(queryCtxt);
 
   // Price matters
@@ -59,4 +59,4 @@ function GaleryFilterContainer() {
   );
 }
 
-export default GaleryFilterContainer;
+export default FiltersContainer;
