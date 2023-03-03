@@ -1,5 +1,5 @@
 // Components
-import GaleryMapper from "../mappers/GaleryMapper.jsx";
+import CardsMapper from "../mappers/CardsMapper.jsx";
 import FiltersContainer from "./FiltersContainer.jsx";
 import NoCars from "../presentationals/NoCars.jsx";
 // Context
@@ -83,7 +83,7 @@ function GaleryContainer() {
       {stock.length === 0 ? (
         <NoCars />
       ) : (
-        <GaleryMapper stock={stock} />
+        <CardsMapper stock={stock} />
       )}
     </section>
   );

@@ -29,7 +29,6 @@ function FiltersContainer({ qtyOfCars }) {
   for (let i = new Date().getFullYear(); i >= 1980; i--) {
     carPossibleYears.push(i);
   }
-
   return (
     <Container fluid id='filters'>
       <Row>

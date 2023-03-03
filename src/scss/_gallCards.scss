@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap');
 
 #galerySection{
-    background:linear-gradient(135deg, rgba(220, 220, 220, 1) 0%, rgba(245, 241, 237, 1) 75%);
-    .row{
-        
+    background:linear-gradient(135deg, rgba(220, 220, 220, 1) 0%, rgba(245, 241, 237, 1) 75%);       
         .card{
             font-family: 'Heebo', sans-serif;
             text-align: center;
@@ -40,21 +38,22 @@
                 }
             }
         }
-
-    }
 }
 
 /***********************/
 /*Phones and tablets*/
 @media only screen and (max-width: 992px)
 {
-
+    #cardsMapper .row{
+        justify-content: center;
+    }
 }
 /***********************/
-/*Desktops only*/
-@media only screen and (min-width: 1200px)
+/*Desktops and laptops*/
+@media only screen and (min-width: 992px)
 {
-    // sets yearFilters.jsx next to each other (n not one below the other)
-    .MuiBox-root{ display: inline-block; }
+    #cardsMapper .row{
+        justify-content: space-around;
+    }
 }
 

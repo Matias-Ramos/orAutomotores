@@ -81,10 +81,13 @@
                 &:first-child{ //km
                     padding-left:2rem;
                 }
-                &:nth-child(2){
+                &:nth-child(2){ //precio
                     border-left: 1px solid lightgrey;
                     border-right: 1px solid lightgrey;
                     padding: 0 2.5rem;
+                    span{
+                        margin-bottom:1.4rem;
+                    }
                 }
                 #priceFilter{
                     width: 100%; //prevents slider from being tiny af
