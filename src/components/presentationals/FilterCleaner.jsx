@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 
 function FilterCleaner({deleteQyParams}) {
   return (
-    <Button variant="outline-secondary" className='filterBtn' onClick={deleteQyParams}>Limpiar filtros</Button>
+    <Button variant="secondary" className='filterBtn' onClick={deleteQyParams}>Borrar filtros</Button>
   )
 }
 

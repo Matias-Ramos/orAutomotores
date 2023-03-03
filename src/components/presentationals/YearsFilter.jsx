@@ -14,7 +14,7 @@ export default function YearsFilter(props) {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box sx={{ minWidth: 120 }} className="yearsFilter">
       <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="demo-simple-select-label">{props.type}</InputLabel>
         <Select

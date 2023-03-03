@@ -1,27 +1,17 @@
-// Bts
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 // Components
 import GaleryMapper from "../mappers/GaleryMapper.jsx";
 import FiltersContainer from "./FiltersContainer.jsx";
-import FilterBottomBtns from "./FilterBottomBtns.jsx";
+import NoCars from "../presentationals/NoCars.jsx";
 // Context
 import { QyParamsCtxtProvider } from "../../context/QyParamsCtxt.jsx";
 //Hooks
-import { useState, useEffect, useMemo, useRef } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useLocation } from "react-router-dom";
-import useMediaQuery from '@mui/material/useMediaQuery';
-
-
-
 
 function GaleryContainer() {
   const [stock, setStock] = useState([]);
   const { search } = useLocation();
   const query = useMemo(() => new URLSearchParams(search), [search]);
-  const filtersOuterContainer = useRef()
-  const desktopVp = useMediaQuery('(min-width:992px)');
 
   //refreshes the stock based on the query params
   useEffect(() => {
@@ -85,33 +75,16 @@ function GaleryContainer() {
     fetchData();
   }, [query]);
 
-  // moves scroll top when filters are used on desktop viewport
-  useEffect(()=>{
-    desktopVp && filtersOuterContainer.current.scrollIntoView( {behavior: "smooth", block: "start"});
-  }
-  ,[stock, desktopVp])
-
-
   return (
-    <section id="galerySection" ref={filtersOuterContainer}>
-      <Container fluid>
-        <Row>
-          {/* Filters */}
-          <Col sm={11} md={11} lg={4} xl={4} xxl={3} className="galeryCols">
-            <div id='filtersOuterContainer'>
-              <QyParamsCtxtProvider>
-                <FiltersContainer />
-                <FilterBottomBtns qtyOfCars={stock.length} />
-              </QyParamsCtxtProvider>
-            </div>
-          </Col>
-
-          {/* Cards */}
-          <Col sm={11} md={11} lg={7} xl={6} xxl={5} className="galeryCols">
-            <GaleryMapper stock={stock} />
-          </Col>
-        </Row>
-      </Container>
+    <section id="galerySection">
+      <QyParamsCtxtProvider>
+        <FiltersContainer qtyOfCars={stock.length} />
+      </QyParamsCtxtProvider>
+      {stock.length === 0 ? (
+        <NoCars />
+      ) : (
+        <GaleryMapper stock={stock} />
+      )}
     </section>
   );
 }
