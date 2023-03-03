@@ -5,12 +5,9 @@ import Col from 'react-bootstrap/Col';
 //Comp
 import ContactUl from '../presentationals/ContactUl';
 
-function ContactUsContainer() {
-  return (
+const ContactUsContainer = () => 
     <section id="contactSection">
        <Container fluid>
-
-            {/* String Data */}
             <Row>
               <Col sm={12} md={12} lg={5} xl={5} xxl={6} id="contactDataContainer">
                   <div>
@@ -19,10 +16,7 @@ function ContactUsContainer() {
                   </div>
               </Col>
             </Row>
-
         </Container>
     </section>
-  )
-}
 
 export default ContactUsContainer

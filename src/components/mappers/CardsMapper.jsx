@@ -5,8 +5,7 @@ import Col from "react-bootstrap/Col";
 //Component
 import CarCard from "../presentationals/CarCard";
 
-function CardsMapper({ stock }) {
-  return (
+const CardsMapper= ({ stock }) => 
     <div id='cardsMapper'>
       <Container fluid>
         <Row>
@@ -22,7 +21,5 @@ function CardsMapper({ stock }) {
         </Row>
       </Container>
     </div>
-  );
-}
 
 export default CardsMapper;

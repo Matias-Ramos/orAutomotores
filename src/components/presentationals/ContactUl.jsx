@@ -1,19 +1,18 @@
 //FontAwesome icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 
-function ContactUl() {
-  return (
-    <ul>
+const ContactUl = () => (
+  <ul>
     {/* Phone */}
     <li>
       <div>
-      <a href="https://wa.me/5491160380546">
-        <FontAwesomeIcon icon={faWhatsapp} />
-      </a>
-        <span>  11-8980-4143</span>
+        <a href="https://wa.me/5491160380546">
+          <FontAwesomeIcon icon={faWhatsapp} />
+        </a>
+        <span> 11-8980-4143</span>
       </div>
     </li>
     <li>
@@ -25,13 +24,11 @@ function ContactUl() {
     </li>
     <li>
       <div>
-      
         <FontAwesomeIcon icon={faLocationCrosshairs} />
         <span> Av. San juan 1733, CABA</span>
       </div>
     </li>
   </ul>
-  )
-}
+);
 
-export default ContactUl
+export default ContactUl;

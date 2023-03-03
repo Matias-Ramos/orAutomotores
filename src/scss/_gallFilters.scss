@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 #filters{
-    padding-top:1rem;
     margin-bottom:2rem;
     .yearsFilter{
         display: inline-block; // sets yearFilters.jsx next to each other (n not one below the other)
@@ -28,9 +27,7 @@
         font-family: 'Roboto', sans-serif;
         //filterCleaner
         &:nth-child(1){
-            
             border-radius:0;
-            
         }
         //cardCounter
         &:nth-child(2){
@@ -78,15 +75,16 @@
             .filterCol{
                 display: flex;
                 flex-direction:column;
+                padding-top:1rem;
                 &:first-child{ //km
                     padding-left:2rem;
                 }
                 &:nth-child(2){ //precio
                     border-left: 1px solid lightgrey;
                     border-right: 1px solid lightgrey;
-                    padding: 0 2.5rem;
+                    padding: 1rem 2.5rem 0 2.5rem;
                     span{
-                        margin-bottom:1.4rem;
+                        margin-bottom:1.5rem;
                     }
                 }
                 #priceFilter{

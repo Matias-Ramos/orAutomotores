@@ -56,7 +56,6 @@ function FiltersContainer({ qtyOfCars }) {
         <Col sm={11} md={11} lg={4} xl={3} xxl={3} className="filterCol">
           <span>
             <b className='mb-5'>Año</b>
-            <br />
           </span>
           <div>
           <YearsFilter

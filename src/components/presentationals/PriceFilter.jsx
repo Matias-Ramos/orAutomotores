@@ -2,9 +2,15 @@
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 
-export default function PriceFilter(props) {
+export default function PriceFilter({
+  updateQyParams,
+  priceChosenRange,
+  highestValue,
+  lowestValue,
+  makePriceReadable,
+}) {
   const handleChange = (evt) => {
-    props.updateQyParams("price", evt.target.value);
+    updateQyParams("price", evt.target.value);
   };
   //accessibility
   function valuetext(value) {
@@ -14,27 +20,22 @@ export default function PriceFilter(props) {
     <>
       <span>
         <b>Precio</b>
-        <br />
       </span>
       <div id="priceFilter">
         <Box sx={{ width: "100%" }}>
           <Slider
             aria-label="Precio"
-            value={
-              props.priceChosenRange
-                ? parseInt(props.priceChosenRange)
-                : props.highestValue
-            }
+            value={priceChosenRange ? parseInt(priceChosenRange) : highestValue}
             getAriaValueText={valuetext}
             valueLabelFormat={(value) => (
-              <div> {props.makePriceReadable(value)} </div>
+              <div> {makePriceReadable(value)} </div>
             )}
             valueLabelDisplay="auto"
             onChange={handleChange}
-            step={props.lowestValue}
+            step={lowestValue}
             marks
-            min={props.lowestValue}
-            max={props.highestValue}
+            min={lowestValue}
+            max={highestValue}
           />
         </Box>
       </div>
