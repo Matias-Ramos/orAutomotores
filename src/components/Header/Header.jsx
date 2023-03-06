@@ -1,13 +1,10 @@
 //Assets
 import logo from "../../assets/logo.png";
 //Bts
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
+import { Container, Row, Col, Image } from "react-bootstrap";
 
 const Header = () => (
-  <header id="headerSection">
+  <header>
     <Container fluid>
       <Row>
         {/* Img */}

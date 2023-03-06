@@ -1,4 +1,4 @@
-import MeLi from "../../assets/mercado-libre.svg";
+import MeLi from "../../../assets/mercado-libre.svg";
 
 const ML = () => (
   <div className="containerML">

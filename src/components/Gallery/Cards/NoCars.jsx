@@ -1,6 +1,6 @@
 //FontAwesome icons
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const NoCars = () => (
   <div id="noCars">

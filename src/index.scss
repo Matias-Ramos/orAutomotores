@@ -1,7 +1,5 @@
-@use './scss/global';
-@use './scss/header';
-@use './scss/gallFilters';
-@use './scss/gallCards';
-@use './scss/contact';
-@use './scss/noCars';
-@use './scss/signature';
+@use './components/Header/header';
+@use './components/Gallery/Filters/gallFilters';
+@use './components/Gallery/Cards/gallCards';
+@use './components/Footer/contact';
+@use './components/Signature/signature';

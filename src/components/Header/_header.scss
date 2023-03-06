@@ -1,4 +1,5 @@
-#headerSection::before{
+//img bckg
+header::before{
     content: "";
     position: absolute;
     top: 0px;
@@ -7,7 +8,7 @@
     left: 0px;
     opacity: 0.75;
 }
-#headerSection 
+header 
 {
     position: relative; 
     .row{
@@ -31,8 +32,8 @@
 /*Tablets and phones*/
 @media only screen and (max-width: 992px)
 {
-    #headerSection::before{
-        background-image: url("../assets/fondoclaro.jpg");
+    header::before{
+        background-image: url("../../assets/fondoAzul.jpg");
         background-position: -10px -500px;
     }
     #logoContainer{
@@ -48,12 +49,12 @@
 /*Tablets, Laptops and Desktops*/
 @media only screen and (min-width: 576px)
 {
-    #headerSection::before{
-        background-image: url("../assets/fondo3.png");
+    header::before{
+        background-image: url("../../assets/fondoRojo.png");
         background-position: 0px -200px;
         background-size: cover;
     }
-    #headerSection 
+    header 
     {
         h1{text-align:left}
         img{

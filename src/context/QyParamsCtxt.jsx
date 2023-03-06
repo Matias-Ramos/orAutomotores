@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 //ctxt
 const queryCtxt = createContext();
 
-function QyParamsCtxtProvider(props) {
+function QyParamsCtxtProvider({children}) {
   const [params, setParams] = useSearchParams();
   function updateQyParams(name, value) {
     params.set(name, value);
@@ -30,7 +30,7 @@ function QyParamsCtxtProvider(props) {
         params: params,
       }}
     >
-      {props.children}
+      {children}
     </queryCtxt.Provider>
   );
 }

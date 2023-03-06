@@ -1,34 +1,20 @@
 // Bts
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Container, Row, Col } from "react-bootstrap";
 // Components
-import PriceFilter from "../presentationals/PriceFilter.jsx";
-import KmFilter from "../presentationals/KmFilter.jsx";
-import YearsFilter from "../presentationals/YearsFilter.jsx";
+import PriceFilter from "./PriceFilter.jsx";
+import KmFilter from "./KmFilter.jsx";
+import YearsFilter from "./YearsFilter.jsx";
 import FilterBottomBtns from "./FilterBottomBtns.jsx";
 // Hook
 import { useContext } from "react";
 // Context
-import { queryCtxt } from "../../context/QyParamsCtxt";
+import { queryCtxt } from "../../../context/QyParamsCtxt";
+// Utils
+import {highestValue, lowestValue, makePriceReadable} from '../../../utils/Filters/PriceUtils.js'
+import carPossibleYears from "../../../utils/Filters/YearsUtils.js";
 
 function FiltersContainer({ qtyOfCars }) {
   const { updateQyParams, params } = useContext(queryCtxt);
-
-  // Price matters
-  const highestValue = 7000000;
-  const lowestValue = 500000;
-  function makePriceReadable(value) {
-    value = value.toLocaleString().replace(",", ".").replace(",", ".");
-    value = "$ " + value;
-    return value;
-  }
-
-  // Years matters
-  let carPossibleYears = [];
-  for (let i = new Date().getFullYear(); i >= 1980; i--) {
-    carPossibleYears.push(i);
-  }
   return (
     <Container fluid id='filters'>
       <Row>

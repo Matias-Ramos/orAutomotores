@@ -1,9 +1,7 @@
-// Bts
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+//Bts
+import { Container, Row, Col } from "react-bootstrap";
 //Component
-import CarCard from "../presentationals/CarCard";
+import CarCard from "./CarCard.jsx";
 
 const CardsMapper= ({ stock }) => 
     <div id='cardsMapper'>

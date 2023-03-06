@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap');
 
-#contactSection{
+footer{
     font-family: 'Heebo', sans-serif;
     font-size:1.2rem;
-    background-color: #252323;
     color:white;
-    padding:2rem 0 2rem 0;
+    padding:2rem 0;
     .row{
         #contactDataContainer{
             ul{
@@ -23,8 +22,8 @@
 /*Laptops and desktops*/
 @media only screen and (min-width: 992px)
 {
-    #contactSection{
-        background-image: url('../assets/fondoclaro.jpg');
+    footer{
+        background-image: url('../../assets/fondoAzul.jpg');
         background-size:cover;
         background-position:center;
         position: relative;
@@ -53,13 +52,14 @@
 /*Tablets and phones*/
 @media only screen and (max-width: 992px)
 {
-    #contactDataContainer 
-    {
-        padding: 1.5rem 0 0 0;
-        div{
-            text-align:center;
+    footer{
+        background-color: #212529;
+        #contactDataContainer 
+        {
+            padding: 1.5rem 0 0 0;
+            div{
+                text-align:center;
+            }
         }
     }
-    
-
 }

@@ -1,10 +1,10 @@
 // Components
-import CardCounter from "../presentationals/CardCounter.jsx";
-import FilterCleaner from "../presentationals/FilterCleaner.jsx";
+import CardCounter from "./CardCounter.jsx";
+import FilterCleaner from "./FilterCleaner.jsx";
 // Hook
 import { useContext } from "react";
 // Context
-import { queryCtxt } from "../../context/QyParamsCtxt";
+import { queryCtxt } from "../../../context/QyParamsCtxt";
 
 const FilterBottomBtns = ({ qtyOfCars }) => {
   const { deleteQyParams } = useContext(queryCtxt);

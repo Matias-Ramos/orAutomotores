@@ -1,14 +1,16 @@
 // Components
-import CardsMapper from "../mappers/CardsMapper.jsx";
-import FiltersContainer from "./FiltersContainer.jsx";
-import NoCars from "../presentationals/NoCars.jsx";
+import CardsMapper from "./Cards/CardsMapper.jsx";
+import NoCars from "./Cards/NoCars.jsx";
+import FiltersContainer from "./Filters/FiltersContainer.jsx";
 // Context
 import { QyParamsCtxtProvider } from "../../context/QyParamsCtxt.jsx";
-//Hooks
+// Hooks
 import { useState, useEffect, useMemo } from "react";
 import { useLocation } from "react-router-dom";
+// Utils
+import filterByKm from "../../utils/Filters/FilterUtils.js";
 
-function GaleryContainer() {
+function GalleryContainer() {
   const [stock, setStock] = useState([]);
   const { search } = useLocation();
   const query = useMemo(() => new URLSearchParams(search), [search]);
@@ -21,29 +23,7 @@ function GaleryContainer() {
       setStock(newData); //brings an unfiltered list on every queryparam update
       filterData(); //then filters based on query params
     };
-    function filterByKm(rangeKm, arrayOfCars) {
-      let result = [];
-      switch (rangeKm) {
-        case "0":
-          result = arrayOfCars.filter((car) => car.km === 0);
-          break;
-        case "0_to_100":
-          result = arrayOfCars.filter(
-            (car) => car.km > 0 && parseInt(car.km) <= 100000
-          );
-          break;
-        case "100_plus":
-          result = arrayOfCars.filter((car) => car.km > 100000);
-          break;
-        case "any":
-          result = arrayOfCars.filter((car) => car.km >= 0);
-          break;
-        default:
-          throw new Error(`Cannot filter by Km. $rangeKm value is: ${rangeKm}.\n
-              Check the range is contemplated in the filterByKm function`);
-      }
-      return result;
-    }
+
     const filterData = () => {
       query.forEach((filterValue, filterKey) => {
         switch (filterKey) {
@@ -67,7 +47,7 @@ function GaleryContainer() {
             break;
           default:
             throw new Error(`The filter value un the URLqueryParams is not the expected (from/up_to/price/km). 
-            Please check GaleryContainer.jsx => filterData() mthd.`);
+            Please check GalleryContainer.jsx => filterData() mthd.`);
         }
       });
     };
@@ -76,7 +56,7 @@ function GaleryContainer() {
   }, [query]);
 
   return (
-    <section id="galerySection">
+    <main id="gallerySection">
       <QyParamsCtxtProvider>
         <FiltersContainer qtyOfCars={stock.length} />
       </QyParamsCtxtProvider>
@@ -85,8 +65,8 @@ function GaleryContainer() {
       ) : (
         <CardsMapper stock={stock} />
       )}
-    </section>
+    </main>
   );
 }
 
-export default GaleryContainer;
+export default GalleryContainer;
