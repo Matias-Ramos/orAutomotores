@@ -1,5 +1,5 @@
 //img bckg
-header::before{
+header::before {
     content: "";
     position: absolute;
     top: 0px;
@@ -8,21 +8,24 @@ header::before{
     left: 0px;
     opacity: 0.75;
 }
-header 
-{
-    position: relative; 
-    .row{
+
+header {
+    position: relative;
+
+    .row {
         justify-content: flex-start;
         align-items: center;
-        h1{
+
+        h1 {
             color: white;
             text-shadow: 1px 1px 2px black;
             position: relative;
         }
-        img{
+
+        img {
             height: auto;
             position: relative;
-        } 
+        }
     }
 }
 
@@ -30,16 +33,17 @@ header
 
 /***********************/
 /*Tablets and phones*/
-@media only screen and (max-width: 992px)
-{
-    header::before{
+@media only screen and (max-width: 992px) {
+    header::before {
         background-image: url("../../assets/fondoAzul.jpg");
         background-position: -10px -500px;
     }
-    #logoContainer{
+
+    #logoContainer {
         display: flex;
         justify-content: center;
-        img{
+
+        img {
             width: 50%;
         }
     }
@@ -47,17 +51,19 @@ header
 
 /***********************/
 /*Tablets, Laptops and Desktops*/
-@media only screen and (min-width: 576px)
-{
-    header::before{
+@media only screen and (min-width: 576px) {
+    header::before {
         background-image: url("../../assets/fondoRojo.png");
         background-position: 0px -200px;
         background-size: cover;
     }
-    header 
-    {
-        h1{text-align:left}
-        img{
+
+    header {
+        h1 {
+            text-align: left
+        }
+
+        img {
             width: 100%;
         }
     }

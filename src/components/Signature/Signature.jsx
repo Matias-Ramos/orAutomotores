@@ -1,4 +1,4 @@
-const Signature = () =>
+const Signature = () => (
   <section id="signatureSection">
     <i>
       FullStack Developer:{" "}
@@ -11,5 +11,6 @@ const Signature = () =>
       </a>
     </i>
   </section>
+);
 
 export default Signature;

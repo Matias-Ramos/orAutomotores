@@ -1,6 +1,5 @@
-const CardCounter= ( {qtyOfCars} ) => 
-  <div className='filterBtn'>
-    Resultados: {qtyOfCars}
-  </div>
+const CardCounter = ({ qtyOfCars }) => (
+  <div className="filterBtn">Resultados: {qtyOfCars}</div>
+);
 
-export default CardCounter
+export default CardCounter;

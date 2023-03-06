@@ -1,5 +1,5 @@
 // MaterialUi
-import {Box, InputLabel, MenuItem, FormControl, Select} from '@mui/material';
+import { Box, InputLabel, MenuItem, FormControl, Select } from "@mui/material";
 
 export default function YearsFilter({
   updateQyParams,

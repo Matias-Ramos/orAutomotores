@@ -60,11 +60,7 @@ function GalleryContainer() {
       <QyParamsCtxtProvider>
         <FiltersContainer qtyOfCars={stock.length} />
       </QyParamsCtxtProvider>
-      {stock.length === 0 ? (
-        <NoCars />
-      ) : (
-        <CardsMapper stock={stock} />
-      )}
+      {stock.length === 0 ? <NoCars /> : <CardsMapper stock={stock} />}
     </main>
   );
 }

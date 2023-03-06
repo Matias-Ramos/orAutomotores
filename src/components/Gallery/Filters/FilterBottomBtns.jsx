@@ -14,6 +14,6 @@ const FilterBottomBtns = ({ qtyOfCars }) => {
       <CardCounter qtyOfCars={qtyOfCars} />
     </div>
   );
-}
+};
 
 export default FilterBottomBtns;

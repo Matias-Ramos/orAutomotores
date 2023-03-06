@@ -6,4 +6,4 @@ function makePriceReadable(value) {
   return value;
 }
 
-export {highestValue, lowestValue, makePriceReadable};
+export { highestValue, lowestValue, makePriceReadable };

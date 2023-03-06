@@ -1,5 +1,5 @@
 //Components
-import {Box, Slider} from '@mui/material';
+import { Box, Slider } from "@mui/material";
 
 export default function PriceFilter({
   updateQyParams,
