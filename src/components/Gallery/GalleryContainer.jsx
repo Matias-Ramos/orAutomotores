@@ -9,18 +9,19 @@ import { useState, useEffect, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 // Utils
 import filterByKm from "../../utils/Filters/FilterUtils.js";
+// Data
+import { getItems } from "../../firebase/firestoreDataMgmt.js";
 
 function GalleryContainer() {
   const [stock, setStock] = useState([]);
   const { search } = useLocation();
   const query = useMemo(() => new URLSearchParams(search), [search]);
 
-  //refreshes the stock based on the query params
+  //refreshes the stock based on query params update
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`/data/stock.json`); //from public
-      const newData = await response.json();
-      setStock(newData); //brings an unfiltered list on every queryparam update
+      const arrayOfCars = await getItems();
+      setStock(arrayOfCars); //brings an unfiltered list on every queryparam update
       filterData(); //then filters based on query params
     };
 

@@ -8,7 +8,7 @@ const CarCard = ({ car }) => (
   <Card className="card">
     <Card.Img
       variant="top"
-      src={require("../../../assets/vehicles/" + car.imgName)}
+      src={car.img}
       alt={car.title}
     />
     <Card.Body>
