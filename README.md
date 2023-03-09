@@ -1,15 +1,19 @@
 # Nombre del proyecto
 OR automotores
 
-## Motivo del proyecto
-El cliente ha solicitado la solucion para un problema: 
-Cuando le consultas por autos en stock, este debe responder con múltiples links individuales de MercadoL y/o imgs.
+## Sobre el proyecto
 
-## Solución
-Esta es una web sencilla, de pocos elementos, que centraliza la totalidad del stock de vehículos en un solo sitio. 
+### Motivo
+El cliente ha solicitado la solución a un problema que se le presenta con regularidad: 
+Cuando un cliente le consulta por los autos que posee en stock, el cliente debe responder con múltiples links individuales de MercadoL y/o imgs.
 
-## Link
+### Solución
+Esta es una solución de React sencilla, de pocos elementos, que centraliza la totalidad del stock de vehículos en una única página web.
+
+### Link
 orautomotores.com.ar
+
+## Código
 
 ### Componentes principales del sitio
 1. Header - Banner
@@ -18,9 +22,9 @@ orautomotores.com.ar
 4. Footer - Contacto
 
 ### Método de actualización de datos
-Se pretende actualizar el stock de vehículos a traves de una base de datos en Firebase. 
+El stock de vehículos se actualiza a traves de Firestore (servicio de Firebase, Google) propio de la cuenta gmail de or-automotores.
 
-## Ejecución del proyecto
+### Ejecución del proyecto
 Ejecutar "npm start" en la terminal del IDE. Acto siguiente la app debería abrirse automáticamente en modo desarrollo. De lo contrario, puede abrirse la app manualmente accediendo al host [http://localhost:3000] en el navegador. 
 
 ### Inicializacion del proyecto
