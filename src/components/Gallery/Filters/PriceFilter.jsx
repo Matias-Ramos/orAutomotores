@@ -23,6 +23,7 @@ export default function PriceFilter({
       <div id="priceFilter">
         <Box sx={{ width: "100%" }}>
           <Slider
+            disabled
             aria-label="Precio"
             value={priceChosenRange ? parseInt(priceChosenRange) : highestValue}
             getAriaValueText={valuetext}

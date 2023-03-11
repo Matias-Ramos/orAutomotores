@@ -6,8 +6,7 @@ import { faLocationCrosshairs, faPhoneVolume } from "@fortawesome/free-solid-svg
 
 const ContactUl = () => {
   const contactPhoneNumber = ["5491160380512", "5491146517300"];
-  console.log(contactPhoneNumber[0])
-  console.log(contactPhoneNumber[1])
+
   return (
     <ul>
       {/* Phone 1*/}
