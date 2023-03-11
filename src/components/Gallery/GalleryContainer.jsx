@@ -5,7 +5,7 @@ import FiltersContainer from "./Filters/FiltersContainer.jsx";
 // Context
 import { QyParamsCtxtProvider } from "../../context/QyParamsCtxt.jsx";
 // Hooks
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useLocation } from "react-router-dom";
 // Utils
 import filterByKm from "../../utils/Filters/FilterUtils.js";
@@ -16,11 +16,20 @@ function GalleryContainer() {
   const [stock, setStock] = useState([]);
   const { search } = useLocation();
   const query = useMemo(() => new URLSearchParams(search), [search]);
+  let localData = useRef([])
+
+  useEffect(()=>{
+    const getSvData = async () => {
+      localData.current = await getItems();
+    }
+    getSvData()
+  },[])
+  
 
   //refreshes the stock based on query params update
   useEffect(() => {
     const fetchData = async () => {
-      const arrayOfCars = await getItems();
+      const arrayOfCars = JSON.parse(JSON.stringify(localData.current));
       setStock(arrayOfCars); //brings an unfiltered list on every queryparam update
       filterData(); //then filters based on query params
     };
