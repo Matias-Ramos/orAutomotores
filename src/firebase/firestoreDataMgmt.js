@@ -1,7 +1,7 @@
 import myFirestore from "./firestoreInitialize.js";
 import { collection, getDocs } from "firebase/firestore"
 
-export async function getItems(){
+export async function getSvCarList(){
     const collectionRef = collection(myFirestore, "Vehiculos");
     const snapShot = await getDocs(collectionRef);
     let arrayOfCars = snapShot.docs.map( document => {
