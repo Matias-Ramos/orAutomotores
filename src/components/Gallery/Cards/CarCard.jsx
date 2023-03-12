@@ -4,8 +4,10 @@ import Card from "react-bootstrap/Card";
 import ML from "./ML.jsx";
 import CardListGroup from "./CardListGroup.jsx";
 
-const CarCard = ({ car }) => (
-  <Card className="card">
+const CarCard = ({ car }) => {
+  
+  return(
+    <Card className="card">
     <Card.Img variant="top" src={car.img} alt={car.title} />
     <Card.Body>
       <Card.Title as="h2" className="my-4">
@@ -15,6 +17,8 @@ const CarCard = ({ car }) => (
       <ML url={car.url} />
     </Card.Body>
   </Card>
-);
+  )
+
+}
 
 export default CarCard;
