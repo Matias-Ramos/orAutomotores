@@ -2,6 +2,7 @@
 // The user may not complete all of the fields. Some properties of the car may be empty.
 
 const cotizUSD = 380;
+
 function declareDataTypes(car){
     car['price'] = parseInt(car['price']) || null;
     car['year'] = parseInt(car['year']) || null;
@@ -22,11 +23,12 @@ function formatStock(stock){
                 car['priceUsd'] = car.price;
                 break;
             case Number.isInteger(car.price) && car.price>500000:
-                car.sellsInDollars = false;
+                car['sellsInDollars'] = false;
                 car['priceArs'] = car.price;
                 car['priceUsd'] = Math.round(car.price/cotizUSD);
                 break;
             default:
+                car['sellsInDollars'] = null;
                 car['priceArs'] = null;
                 car['priceUsd'] = null;
                 break;

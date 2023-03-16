@@ -8,13 +8,15 @@ import { QyParamsCtxtProvider } from "../../context/QyParamsCtxt.jsx";
 import { useState, useEffect, useMemo, useRef } from "react";
 import { useLocation } from "react-router-dom";
 // Utils
-import { formatStock } from "../../utils/Gallery/stockDataFormatting.js";
-import { filterData } from "../../utils/Gallery/filterStock.js";
+import { formatStock } from "../../utils/byGallery/stockDataFormatting.js";
+import { filterData } from "../../utils/byGallery/filterStock.js";
+import { getPriceRange } from "../../utils/byFilters/minMaxPrices.js";
 // Data
 import { getSvCarList } from "../../firebase/firestoreDataMgmt.js";
 
 function GalleryContainer() {
   let svCarList = useRef([]);
+  let minMaxPrices = useRef([]);
   const [stock, setStock] = useState([]);
   const { search } = useLocation();
   const query = useMemo(() => new URLSearchParams(search), [search]);
@@ -22,10 +24,11 @@ function GalleryContainer() {
   //refreshes the stock based on query params update
   useEffect(() => {
     const updateStockState = async () => {
-      // fetches svData only if the app has just been opened. Then it saves it in useRef.
+      // fetches svData only if the app has just been opened.
       if (svCarList.current.length === 0) {
         svCarList.current = await getSvCarList();
         svCarList.current = formatStock(svCarList.current);
+        minMaxPrices.current = getPriceRange(svCarList.current);
       }
       const array = filterData(query, svCarList.current);
       setStock(array);
@@ -33,10 +36,15 @@ function GalleryContainer() {
     updateStockState();
   }, [query]);
 
+  
+
   return (
     <main id="gallerySection">
       <QyParamsCtxtProvider>
-        <FiltersContainer qtyOfCars={stock.length} />
+        <FiltersContainer
+          qtyOfCars={stock.length}
+          minMaxPrices={minMaxPrices.current}
+        />
       </QyParamsCtxtProvider>
       {stock.length === 0 ? <NoCars /> : <CardsMapper stock={stock} />}
     </main>

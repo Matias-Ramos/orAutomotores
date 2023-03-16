@@ -1,11 +1,12 @@
 // MaterialUi
 import { Box, InputLabel, MenuItem, FormControl, Select } from "@mui/material";
+// Utils
+import carPossibleYears from "../../../utils/byFilters/yearsUtils.js";
 
 export default function YearsFilter({
   updateQyParams,
   type,
   yearChosenRange,
-  carPossibleYears,
 }) {
   const handleChange = (evt) => {
     const queryParamName = type === "Desde" ? "from" : "up_to";
