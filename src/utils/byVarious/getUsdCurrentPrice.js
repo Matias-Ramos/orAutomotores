@@ -1,8 +1,8 @@
-const getUsdCurrentPrice = async () =>
-{
-  let url = 'https://api.bluelytics.com.ar/v2/latest';
-  let answ = await fetch (url);
-  const data = await answ.json();
+const getUsdCurrentPrice = async () => {
+  const url = "https://api.bluelytics.com.ar/v2/latest";
+  const answ = await fetch(url);
+  let data = await answ.json();
+  data = data.blue.value_avg;
   return data;
-}
-export {getUsdCurrentPrice}
+};
+export { getUsdCurrentPrice };

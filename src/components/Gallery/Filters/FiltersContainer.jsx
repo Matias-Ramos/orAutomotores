@@ -2,7 +2,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 // Components
 import PriceFilterContainer from "./Price/PriceFilterContainer.jsx";
-import KmFilter from "./KmFilter.jsx";
+import KmFilterContainer from "./Km/KmFilterContainer.jsx";
 import YearsFilter from "./YearsFilter.jsx";
 import FilterBottomBtns from "./Btns/FilterBottomBtns.jsx";
 // Hook
@@ -10,16 +10,16 @@ import { useContext } from "react";
 // Context
 import { queryCtxt } from "../../../context/QyParamsCtxt";
 
-function FiltersContainer({ qtyOfCars, minMaxPrices }) {
+function FiltersContainer({ qtyOfCars, priceRange }) {
   const { updateQyParams, params } = useContext(queryCtxt);
   return (
     <Container fluid id="filters">
       <Row>
         {/* Km */}
         <Col sm={11} md={11} lg={3} xl={2} xxl={2} className="filterCol">
-          <KmFilter
+          <KmFilterContainer
             updateQyParams={updateQyParams}
-            kmChosenRange={params.get("km")}
+            kmQyParam={params.get("km")}
           />
         </Col>
 
@@ -27,8 +27,8 @@ function FiltersContainer({ qtyOfCars, minMaxPrices }) {
         <Col sm={11} md={11} lg={5} xl={5} xxl={5} className="filterCol">
           <PriceFilterContainer
             updateQyParams={updateQyParams}
-            priceChosenRange={params.get("price")}
-            minMaxPrices={minMaxPrices}
+            priceQyParam={params.get("price")}
+            priceRange={priceRange}
           />
         </Col>
 
@@ -41,12 +41,12 @@ function FiltersContainer({ qtyOfCars, minMaxPrices }) {
             <YearsFilter
               type="Desde"
               updateQyParams={updateQyParams}
-              yearChosenRange={params.get("from")}
+              yearQyParam={params.get("from")}
             />
             <YearsFilter
               type="Hasta"
               updateQyParams={updateQyParams}
-              yearChosenRange={params.get("up_to")}
+              yearQyParam={params.get("up_to")}
             />
           </div>
         </Col>

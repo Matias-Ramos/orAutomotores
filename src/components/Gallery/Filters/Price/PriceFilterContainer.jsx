@@ -1,30 +1,26 @@
 //Components
-import CurrencySwitch from "./CurrencySwitch.jsx";
 import Slider from "./Slider.jsx";
-// Hook
-import { useState } from "react";
 
 export default function PriceFilter({
   updateQyParams,
-  priceChosenRange,
-  minMaxPrices,
+  priceQyParam,
+  priceRange,
 }) {
-  const [filterCurrencyOnArs, setCurrencyArs] = useState(true);
-
+  const handleChange = (evt) => updateQyParams("price", evt.target.value) ;
+  const valuetext = (value) => `$${value}`; // slider accessibility
+  const stepArs = 1000000;
   return (
     <>
-      <div id="priceSpans">
-        <span>
-          <b>Precio</b>
-        </span>
-        <CurrencySwitch setCurrencyArs={setCurrencyArs} />
-      </div>
+      <span>
+        <b>Precio</b>
+      </span>
       <div id="priceFilter">
         <Slider
-          priceChosenRange={parseInt(priceChosenRange)}
-          updateQyParams={updateQyParams}
-          minMaxPrices={minMaxPrices}
-          filterCurrencyOnArs={filterCurrencyOnArs}
+          priceQyParam={parseInt(priceQyParam)}
+          priceRange={priceRange}
+          handleChange={handleChange}
+          valuetext={valuetext}
+          stepArs={stepArs}
         />
       </div>
     </>

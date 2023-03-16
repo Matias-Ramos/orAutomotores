@@ -6,7 +6,7 @@ import carPossibleYears from "../../../utils/byFilters/yearsUtils.js";
 export default function YearsFilter({
   updateQyParams,
   type,
-  yearChosenRange,
+  yearQyParam,
 }) {
   const handleChange = (evt) => {
     const queryParamName = type === "Desde" ? "from" : "up_to";
@@ -20,7 +20,7 @@ export default function YearsFilter({
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={yearChosenRange ? yearChosenRange : ""}
+          value={yearQyParam ? yearQyParam : ""}
           label="Año"
           onChange={handleChange}
         >

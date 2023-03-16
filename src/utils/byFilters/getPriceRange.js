@@ -5,8 +5,7 @@ class PriceRangeClass {
     this.priceyCar = this.stock.reduce((prev, curr) => prev.priceArs > curr.priceArs ? prev : curr);
   }
   getMinPriceArs() {
-    const minPriceArs =
-      Math.floor(this.cheapestCar.priceArs / 1000000) * 1000000;
+    const minPriceArs = Math.floor(this.cheapestCar.priceArs / 1000000) * 1000000;
     return minPriceArs;
   }
 
@@ -15,22 +14,10 @@ class PriceRangeClass {
     return maxPriceArs;
   }
 
-  getMinPriceUsd() {
-    const minPriceUsd = Math.floor(this.cheapestCar.priceUsd / 1000) * 1000;
-    return minPriceUsd;
-  }
-
-  getMaxPriceUsd() {
-    const maxPriceUsd = Math.ceil(this.priceyCar.priceUsd / 1000) * 1000;
-    return maxPriceUsd;
-  }
-
   createPriceRangeObject() {
     return {
       minArs: this.getMinPriceArs(),
-      maxArs: this.getMaxPriceArs(),
-      minUsd: this.getMinPriceUsd(),
-      maxUsd: this.getMaxPriceUsd()
+      maxArs: this.getMaxPriceArs()
     };
   }
 }
