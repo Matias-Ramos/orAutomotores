@@ -16,7 +16,7 @@ const filterData = (query, svCarList) => {
         break;
       case "price":
         array = array.filter(
-          (car) => car.price <= filterValue || car.price == null
+          (car) => car.priceArs <= filterValue || car.priceArs == null
         );
         break;
       case "km":
