@@ -27,7 +27,8 @@ function FiltersContainer({ qtyOfCars, priceRange }) {
         <Col sm={11} md={11} lg={5} xl={5} xxl={5} className="filterCol">
           <PriceFilterContainer
             updateQyParams={updateQyParams}
-            priceQyParam={params.get("price")}
+            priceInitQyParam={params.get("price_init")}
+            priceLimitQyParam={params.get("price_limit")}
             priceRange={priceRange}
           />
         </Col>
