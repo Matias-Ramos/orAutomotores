@@ -1,7 +1,7 @@
 //Components
 import Slider from "./Slider.jsx";
 //Hook
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 export default function PriceFilter({
   updateQyParams,
@@ -10,26 +10,13 @@ export default function PriceFilter({
   priceRange,
 }) {
 
-  const [scope, setScope] = useState([]);
-
-  useEffect(() => {
-    if (
-      priceInitQyParam === null &&
-      priceLimitQyParam === null &&
-      Object.keys(priceRange).length !== 0
-    ) {
-      console.log('entró el useEffect')
-      setScope([priceRange.minArs, priceRange.maxArs]);
-    }
-  }, []);
-
-  
-  
 
   const handleChange = (evt) => {
-    updateQyParams("price_init", evt.target.value[0]);
-    updateQyParams("price_limit", evt.target.value[1]);
-    setScope(evt.target.value)
+    console.log(evt.target.value)
+    console.log(priceInitQyParam)
+    console.log(priceLimitQyParam)
+    priceInitQyParam !== evt.target.value[0] && updateQyParams("price_init", evt.target.value[0]);
+    priceLimitQyParam !== evt.target.value[1] && updateQyParams("price_limit", evt.target.value[1]);
   };
 
   const valuetext = (value) => `$${value}`; // slider accessibility
@@ -41,7 +28,8 @@ export default function PriceFilter({
       </span>
       <div id="priceFilter">
         <Slider
-          scope={scope}
+          priceInitQyParam={priceInitQyParam}
+          priceLimitQyParam={priceLimitQyParam}
           priceRange={priceRange}
           handleChange={handleChange}
           valuetext={valuetext}

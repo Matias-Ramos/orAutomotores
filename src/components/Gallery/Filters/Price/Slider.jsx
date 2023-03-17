@@ -5,22 +5,27 @@ import { improvePriceReadability } from "../../../../utils/byVarious/priceUtils"
 
 
 const Slider = ({
-  scope,
+  priceInitQyParam,
+  priceLimitQyParam,
   priceRange,
   handleChange,
   valuetext,
   stepArs,
 }) => {
+  
 
-  if (Object.keys(priceRange).length !== 0 && scope.length!==0)
+  if (Object.keys(priceRange).length !== 0)
     // renders slider only when variables are set and ready. 
     // Else the element values switches between uncontrolled(undefined) and controlled(sudden value) and throws a console error.
     return (
       <Box sx={{ width: "100%" }}>
         <SliderMui
-          getAriaLabel={() => 'Rango de precio'}
-          // value={priceQyParam ? parseInt(priceQyParam) : priceRange.maxArs}
-          value={scope}
+          getAriaLabel={() => "Rango de precio"}
+          value={
+            priceInitQyParam && priceLimitQyParam
+              ? [parseInt(priceInitQyParam), parseInt(priceLimitQyParam)]
+              : [priceRange.minArs, priceRange.maxArs]
+          }
           getAriaValueText={valuetext}
           valueLabelFormat={(value) => (
             <div> {improvePriceReadability(value)} </div>
