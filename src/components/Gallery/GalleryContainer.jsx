@@ -1,7 +1,7 @@
 // Components
 import CardsMapper from "./Cards/CardsMapper.jsx";
-import NoCars from "./Cards/NoCars.jsx";
 import FiltersContainer from "./Filters/FiltersContainer.jsx";
+import Loading from "./Loading.jsx";
 // Context
 import { QyParamsCtxtProvider } from "../../context/QyParamsCtxt.jsx";
 // Hooks
@@ -36,8 +36,6 @@ function GalleryContainer() {
     updateStockState();
   }, [query]);
 
-  
-
   return (
     <main id="gallerySection">
       <QyParamsCtxtProvider>
@@ -46,7 +44,7 @@ function GalleryContainer() {
           priceRange={priceRange.current}
         />
       </QyParamsCtxtProvider>
-      {stock.length === 0 ? <NoCars /> : <CardsMapper stock={stock} />}
+      {svCarList.current.length === 0 ? <Loading /> : <CardsMapper stock={stock} /> }
     </main>
   );
 }
