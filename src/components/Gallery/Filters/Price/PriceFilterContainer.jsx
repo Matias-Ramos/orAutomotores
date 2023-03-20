@@ -1,7 +1,9 @@
-//Components
+// Components
 import Slider from "./Slider.jsx";
-//Hook
+// Hook
 import { useState, useEffect } from "react";
+// PropTypes
+import PropTypes from "prop-types"
 
 export default function PriceFilter({
   updateQyParams,
@@ -48,4 +50,14 @@ export default function PriceFilter({
       </div>
     </>
   );
+}
+
+PriceFilter.propTypes = {
+  updateQyParams : PropTypes.func.isRequired,
+  priceInitQyParam : PropTypes.string,
+  priceLimitQyParam : PropTypes.string,
+  priceRange: PropTypes.shape({
+    minArs: PropTypes.number,
+    maxArs: PropTypes.number,
+  }),
 }

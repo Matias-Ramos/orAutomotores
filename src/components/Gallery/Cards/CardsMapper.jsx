@@ -1,8 +1,10 @@
-//Bts
+// Bts
 import { Container, Row, Col } from "react-bootstrap";
-//Component
+// Component
 import CarCard from "./CarCard.jsx";
 import NoCars from "./NoCars.jsx";
+// PropTypes
+import PropTypes from "prop-types"
 
 const CardsMapper = ({ stock }) => {
   return (
@@ -35,5 +37,19 @@ const CardsMapper = ({ stock }) => {
     </>
   );
 };
+
+CardsMapper.propTypes = { 
+  stock : PropTypes.arrayOf(
+    PropTypes.shape({
+      year : PropTypes.number,
+      km : PropTypes.number,
+      title : PropTypes.string.isRequired,
+      img : PropTypes.string,
+      url : PropTypes.string,
+      priceArs : PropTypes.number,
+      priceUsd : PropTypes.number,
+      sellsInDollars : PropTypes.bool
+  }))
+}
 
 export default CardsMapper;

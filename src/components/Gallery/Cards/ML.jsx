@@ -1,4 +1,6 @@
 import MeLi from "../../../assets/mercado-libre.svg";
+// PropTypes
+import PropTypes from "prop-types"
 
 const ML = ({ url }) => (
   <>
@@ -20,5 +22,7 @@ const ML = ({ url }) => (
     )}
   </>
 );
+
+ML.propTypes = { url: PropTypes.string };
 
 export default ML;

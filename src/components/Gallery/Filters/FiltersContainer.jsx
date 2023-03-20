@@ -9,6 +9,8 @@ import FilterBottomBtns from "./Btns/FilterBottomBtns.jsx";
 import { useContext } from "react";
 // Context
 import { queryCtxt } from "../../../context/QyParamsCtxt";
+// PropTypes
+import PropTypes from "prop-types"
 
 function FiltersContainer({ qtyOfCars, priceRange }) {
   const { updateQyParams, params } = useContext(queryCtxt);
@@ -51,8 +53,9 @@ function FiltersContainer({ qtyOfCars, priceRange }) {
             />
           </div>
         </Col>
-
+        </Row>
         {/* Buttons */}
+        <Row>
         <Col sm={11} md={11} lg={12} xl={12} xxl={12}>
           <FilterBottomBtns qtyOfCars={qtyOfCars} />
         </Col>
@@ -60,5 +63,13 @@ function FiltersContainer({ qtyOfCars, priceRange }) {
     </Container>
   );
 }
+
+FiltersContainer.propTypes = {
+  qtyOfCars: PropTypes.number.isRequired,
+  priceRange: PropTypes.shape({
+    minArs: PropTypes.number,
+    maxArs: PropTypes.number,
+  }),
+};
 
 export default FiltersContainer;

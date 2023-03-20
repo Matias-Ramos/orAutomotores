@@ -1,18 +1,21 @@
-// Components
-import CardsMapper from "./Cards/CardsMapper.jsx";
-import FiltersContainer from "./Filters/FiltersContainer.jsx";
-import Loading from "./Loading.jsx";
-// Context
-import { QyParamsCtxtProvider } from "../../context/QyParamsCtxt.jsx";
-// Hooks
-import { useState, useEffect, useMemo, useRef } from "react";
-import { useLocation } from "react-router-dom";
-// Utils
-import { modelStockData } from "../../utils/byGallery/modelStockData.js";
-import { filterData } from "../../utils/byGallery/filterStock.js";
-import { getPriceRange } from "../../utils/byFilters/getPriceRange.js";
-// Data
-import { getSvCarList } from "../../firebase/firestoreDataMgmt.js";
+import {
+  // Components
+  CardsMapper,
+  FiltersContainer,
+  Loading,
+  QyParamsCtxtProvider,
+  // Hooks
+  useState,
+  useEffect,
+  useMemo,
+  useRef,
+  useLocation,
+  // Functions
+  modelStockData,
+  filterData,
+  getPriceRange,
+  getSvCarList,
+} from "./tools.js";
 
 function GalleryContainer() {
   let svCarList = useRef([]);

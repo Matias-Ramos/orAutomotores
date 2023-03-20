@@ -1,7 +1,9 @@
-//Components
+// Components
 import { Box, Slider as SliderMui } from "@mui/material";
-//Utils
+// Utils
 import { improvePriceReadability } from "../../../../utils/byVarious/priceUtils";
+// PropTypes
+import PropTypes from "prop-types";
 
 const Slider = ({ handleChange, valuetext, stepArs, priceRange, scope }) => (
   <Box sx={{ width: "100%" }}>
@@ -21,5 +23,16 @@ const Slider = ({ handleChange, valuetext, stepArs, priceRange, scope }) => (
     />
   </Box>
 );
+
+Slider.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  valuetext: PropTypes.func.isRequired,
+  stepArs: PropTypes.number.isRequired,
+  scope: PropTypes.arrayOf(PropTypes.number),
+  priceRange: PropTypes.shape({
+    minArs: PropTypes.number,
+    maxArs: PropTypes.number,
+  }),
+};
 
 export default Slider;

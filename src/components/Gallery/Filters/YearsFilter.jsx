@@ -2,6 +2,8 @@
 import { Box, InputLabel, MenuItem, FormControl, Select } from "@mui/material";
 // Utils
 import carPossibleYears from "../../../utils/byFilters/yearsUtils.js";
+// PropTypes
+import PropTypes from "prop-types"
 
 export default function YearsFilter({
   updateQyParams,
@@ -24,13 +26,19 @@ export default function YearsFilter({
           label="Año"
           onChange={handleChange}
         >
-          {carPossibleYears.map((slctYear) => (
-            <MenuItem key={slctYear} value={slctYear}>
-              {slctYear}
+          {carPossibleYears.map((year) => (
+            <MenuItem key={year} value={year}>
+              {year}
             </MenuItem>
           ))}
         </Select>
       </FormControl>
     </Box>
   );
+}
+
+YearsFilter.propTypes = {
+  updateQyParams : PropTypes.func.isRequired,
+  type : PropTypes.string.isRequired,
+  yearQyParam : PropTypes.string,
 }

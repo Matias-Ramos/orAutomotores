@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200&display=swap");
 
 footer {
-    font-family: 'Heebo', sans-serif;
+    font-family: "Heebo", sans-serif;
     font-size: 1.2rem;
     color: white;
     padding: 2rem 0;
@@ -29,7 +29,7 @@ footer {
 /*Laptops and desktops*/
 @media only screen and (min-width: 992px) {
     footer {
-        background-image: url('../../assets/fondoAzul.jpg');
+        background-image: url("../../assets/fondoAzul.jpg");
         background-size: cover;
         background-position: center;
         position: relative;

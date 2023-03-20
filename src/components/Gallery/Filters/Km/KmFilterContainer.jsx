@@ -1,5 +1,9 @@
+// Component
 import KmListItem from "./KmListItem";
+// Function
 import classNames from "classnames";
+// PropType
+import PropTypes from "prop-types"
 
 const KmFilterContainer = ({ updateQyParams, kmQyParam }) => {
   const getClasses = (spanKmValue) => {
@@ -49,5 +53,10 @@ const KmFilterContainer = ({ updateQyParams, kmQyParam }) => {
     </>
   );
 };
+
+KmFilterContainer.propTypes = {
+  updateQyParams : PropTypes.func,
+  kmQyParam : PropTypes.string
+}
 
 export default KmFilterContainer;
