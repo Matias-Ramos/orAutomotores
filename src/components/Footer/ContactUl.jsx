@@ -40,7 +40,7 @@ const ContactUl = () => {
       <li>
         <div>
           <FontAwesomeIcon icon={faLocationCrosshairs} />
-          <span> Necochea 3530, CABA</span>
+          <span> Necochea 3530, Lomas del Mirador</span>
         </div>
       </li>
     </ul>

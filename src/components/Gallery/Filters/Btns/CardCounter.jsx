@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const CardCounter = ({ qtyOfCars }) => (
-  <div className="filterBtn">Resultados: {qtyOfCars}</div>
+  <div className="filterBtn">Vehículos: {qtyOfCars}</div>
 );
 
 CardCounter.propTypes = {
