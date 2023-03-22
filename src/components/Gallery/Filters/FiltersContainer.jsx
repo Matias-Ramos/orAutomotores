@@ -5,6 +5,7 @@ import PriceFilterContainer from "./Price/PriceFilterContainer.jsx";
 import KmFilterContainer from "./Km/KmFilterContainer.jsx";
 import YearsFilter from "./YearsFilter.jsx";
 import FilterBottomBtns from "./Btns/FilterBottomBtns.jsx";
+import NavBar from "./NavBar.jsx"
 // Hook
 import { useContext } from "react";
 // Context
@@ -15,7 +16,11 @@ import PropTypes from "prop-types"
 function FiltersContainer({ qtyOfCars, priceRange }) {
   const { updateQyParams, params } = useContext(queryCtxt);
   return (
-    <Container fluid id="filters">
+    <>
+    {/* Mobile */}
+    <NavBar />
+    {/* Desktop */}
+    <Container fluid id="filters" className="d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
       <Row>
         {/* Km */}
         <Col sm={11} md={11} lg={3} xl={2} xxl={2} className="filterCol">
@@ -61,6 +66,7 @@ function FiltersContainer({ qtyOfCars, priceRange }) {
         </Col>
       </Row>
     </Container>
+    </>
   );
 }
 

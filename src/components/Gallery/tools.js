@@ -1,7 +1,7 @@
 // Components
 import CardsMapper from "./Cards/CardsMapper.jsx";
 import FiltersContainer from "./Filters/FiltersContainer.jsx";
-import Loading from "./Loading.jsx";
+import Loading from "./Filters/Loading.jsx";
 import { QyParamsCtxtProvider } from "../../context/QyParamsCtxt.jsx";
 // Hooks
 import { useState, useEffect, useMemo, useRef } from "react";
