@@ -1,7 +1,8 @@
 import {
   // Components
   CardsMapper,
-  FiltersContainer,
+  FiltersContainerDktp,
+  NavBarMobile,
   Loading,
   QyParamsCtxtProvider,
   // Hooks
@@ -42,7 +43,11 @@ function GalleryContainer() {
   return (
     <main id="gallerySection">
       <QyParamsCtxtProvider>
-        <FiltersContainer
+        <FiltersContainerDktp
+          qtyOfCars={stock.length}
+          priceRange={priceRange.current}
+        />
+        <NavBarMobile 
           qtyOfCars={stock.length}
           priceRange={priceRange.current}
         />

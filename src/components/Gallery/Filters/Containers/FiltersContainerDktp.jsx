@@ -1,26 +1,25 @@
-// Bts
-import { Container, Row, Col } from "react-bootstrap";
-// Components
-import PriceFilterContainer from "./Price/PriceFilterContainer.jsx";
-import KmFilterContainer from "./Km/KmFilterContainer.jsx";
-import YearsFilter from "./YearsFilter.jsx";
-import FilterBottomBtns from "./Btns/FilterBottomBtns.jsx";
-import NavBar from "./NavBar.jsx"
-// Hook
-import { useContext } from "react";
-// Context
-import { queryCtxt } from "../../../context/QyParamsCtxt";
-// PropTypes
-import PropTypes from "prop-types"
+import {
+  // Bts
+  Container, Row, Col,
+  // Components
+  PriceFilterContainer,
+  KmFilterContainer,
+  YearsFilter,
+  FilterBottomBtns,
+  // Hooks
+  useContext, queryCtxt,
+  // Functions
+  PropTypes
+} from "./tools.js"
 
-function FiltersContainer({ qtyOfCars, priceRange }) {
+function FiltersContainerDktp({ qtyOfCars, priceRange }) {
   const { updateQyParams, params } = useContext(queryCtxt);
   return (
-    <>
-    {/* Mobile */}
-    <NavBar />
-    {/* Desktop */}
-    <Container fluid id="filters" className="d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
+    <Container
+      fluid
+      id="filters"
+      className="d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block"
+    >
       <Row>
         {/* Km */}
         <Col sm={11} md={11} lg={3} xl={2} xxl={2} className="filterCol">
@@ -58,19 +57,18 @@ function FiltersContainer({ qtyOfCars, priceRange }) {
             />
           </div>
         </Col>
-        </Row>
-        {/* Buttons */}
-        <Row>
+      </Row>
+      {/* Buttons */}
+      <Row>
         <Col sm={11} md={11} lg={12} xl={12} xxl={12}>
           <FilterBottomBtns qtyOfCars={qtyOfCars} />
         </Col>
       </Row>
     </Container>
-    </>
   );
 }
 
-FiltersContainer.propTypes = {
+FiltersContainerDktp.propTypes = {
   qtyOfCars: PropTypes.number.isRequired,
   priceRange: PropTypes.shape({
     minArs: PropTypes.number,
@@ -78,4 +76,4 @@ FiltersContainer.propTypes = {
   }),
 };
 
-export default FiltersContainer;
+export default FiltersContainerDktp;

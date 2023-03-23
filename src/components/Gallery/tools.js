@@ -1,6 +1,7 @@
 // Components
 import CardsMapper from "./Cards/CardsMapper.jsx";
-import FiltersContainer from "./Filters/FiltersContainer.jsx";
+import FiltersContainerDktp from "./Filters/Containers/FiltersContainerDktp.jsx";
+import NavBarMobile from "./Filters/Containers/NavBarMobile.jsx";
 import Loading from "./Filters/Loading.jsx";
 import { QyParamsCtxtProvider } from "../../context/QyParamsCtxt.jsx";
 // Hooks
@@ -14,7 +15,8 @@ import { getSvCarList } from "../../firebase/firestoreDataMgmt.js";
 
 export {
   CardsMapper,
-  FiltersContainer,
+  FiltersContainerDktp,
+  NavBarMobile,
   Loading,
   QyParamsCtxtProvider,
   useState,
