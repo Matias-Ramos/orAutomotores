@@ -1,0 +1,37 @@
+/***********************/
+/*Laptops and Desktops*/
+@media only screen and (min-width: 992px) {
+    #filtersDktp {
+        .filterCol {
+            //price
+            &:nth-child(2) {
+                border-left: 1px solid lightgrey;
+                border-right: 1px solid lightgrey;
+                padding: 1rem 2.5rem 0 2.5rem;
+                span {
+                    margin-bottom: 1.5rem;
+                }
+            }
+            #priceFilter {
+                width: 100%; //prevents slider from being tiny af
+            }
+        }
+    }
+}
+
+/***********************/
+/* Mobile */
+@media only screen and (max-width: 992px) {
+    .navbar-collapse{
+        color:#343a40;
+    }
+    #priceFilter {
+        display: flex;
+        justify-content: center;
+        
+        // Slider container
+        .MuiBox-root {
+            width: 75%;
+        }
+    }
+}

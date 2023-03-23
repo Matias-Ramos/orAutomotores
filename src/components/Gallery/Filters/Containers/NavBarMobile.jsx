@@ -18,7 +18,6 @@ function NavBarMobile({ qtyOfCars, priceRange }) {
   return (
     <NavbarBts
       sticky="top"
-      bg="light"
       expand="lg"
       className="d-sm-block d-md-block d-lg-none d-xl-none d-xxl-none"
     >
@@ -26,37 +25,38 @@ function NavBarMobile({ qtyOfCars, priceRange }) {
         <span>Filtros▾</span>
       </NavbarBts.Toggle>
       <NavbarBts.Collapse id="basic-navbar-nav">
-        <NavbarBts.Text>
+        <div className="filterCompCont">
           <KmFilterContainer
             updateQyParams={updateQyParams}
             kmQyParam={params.get("km")}
           />
-        </NavbarBts.Text>
-        <NavbarBts.Text>
+        </div>
+        <div className="filterCompCont">
           <PriceFilterContainer
             updateQyParams={updateQyParams}
             priceInitQyParam={params.get("price_init")}
             priceLimitQyParam={params.get("price_limit")}
             priceRange={priceRange}
           />
-        </NavbarBts.Text>
-        <NavbarBts.Text>
-          <div>
-            <YearsFilter
-              type="Desde"
-              updateQyParams={updateQyParams}
-              yearQyParam={params.get("from")}
-            />
-            <YearsFilter
-              type="Hasta"
-              updateQyParams={updateQyParams}
-              yearQyParam={params.get("up_to")}
-            />
-          </div>
-        </NavbarBts.Text>
-        <NavbarBts.Text>
+        </div>
+        <div className="filterCompCont">
+          <span>
+            <b className="mb-5">Año</b>
+          </span>
+          <YearsFilter
+            type="Desde"
+            updateQyParams={updateQyParams}
+            yearQyParam={params.get("from")}
+          />
+          <YearsFilter
+            type="Hasta"
+            updateQyParams={updateQyParams}
+            yearQyParam={params.get("up_to")}
+          />
+        </div>
+        <div>
           <FilterBottomBtns qtyOfCars={qtyOfCars} />
-        </NavbarBts.Text>
+        </div>
       </NavbarBts.Collapse>
     </NavbarBts>
   );

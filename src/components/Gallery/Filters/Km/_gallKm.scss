@@ -1,0 +1,27 @@
+.kmSpan {
+    padding: 0 .25rem;
+    transition: box-shadow .5s ease-in;
+}
+
+.kmSpan:hover {
+    box-shadow: inset 200px 0 0 0 #99c1de;
+    cursor: pointer;
+}
+
+.activeKmRange {
+    box-shadow: inset 200px 0 0 0 #d6e2e9;
+    font-weight: 500;
+}
+
+/***********************/
+/*Laptops and Desktops*/
+@media only screen and (min-width: 992px) {
+    #filters {
+        .filterCol {
+            //km
+            &:first-child {
+                padding-left: 2rem;
+            }
+        }
+    }
+}

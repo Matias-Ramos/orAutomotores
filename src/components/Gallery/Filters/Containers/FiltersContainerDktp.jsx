@@ -17,7 +17,7 @@ function FiltersContainerDktp({ qtyOfCars, priceRange }) {
   return (
     <Container
       fluid
-      id="filters"
+      id="filtersDktp"
       className="d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block"
     >
       <Row>

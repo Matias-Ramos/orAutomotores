@@ -1,0 +1,10 @@
+.yearsFilter {
+    display: inline-block; // sets yearFilters.jsx next to each other (n not one below the other)
+}
+/***********************/
+/*Laptops and Desktops*/
+@media only screen and (min-width: 992px) {
+    .yearsFilter {
+        margin-top: 0.7rem;
+    }
+}

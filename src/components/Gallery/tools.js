@@ -2,7 +2,7 @@
 import CardsMapper from "./Cards/CardsMapper.jsx";
 import FiltersContainerDktp from "./Filters/Containers/FiltersContainerDktp.jsx";
 import NavBarMobile from "./Filters/Containers/NavBarMobile.jsx";
-import Loading from "./Filters/Loading.jsx";
+import Loading from "./Loading.jsx";
 import { QyParamsCtxtProvider } from "../../context/QyParamsCtxt.jsx";
 // Hooks
 import { useState, useEffect, useMemo, useRef } from "react";

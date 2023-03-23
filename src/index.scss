@@ -1,5 +1,9 @@
 @use "./components/Header/header";
-@use "./components/Gallery/Filters/gallFilters";
+@use "./components/Gallery/Filters/Containers/gallContainers";
+@use "./components/Gallery/Filters/Km/gallKm";
+@use "./components/Gallery/Filters/Price/gallPrice";
+@use "./components/Gallery/Filters/Years/gallYears";
+@use "./components/Gallery/Filters/Btns/gallBtns";
 @use "./components/Gallery/Cards/gallCards";
 @use "./components/Footer/contact";
 @use "./components/Signature/signature";
