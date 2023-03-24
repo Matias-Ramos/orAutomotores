@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Matias-Ramos/or-automotores-react.git/static/css/main.4ba03304.css",
+    "main.js": "/Matias-Ramos/or-automotores-react.git/static/js/main.ee02cf92.js",
+    "static/media/fondoRojo.png": "/Matias-Ramos/or-automotores-react.git/static/media/fondoRojo.d28899f8616d45788257.png",
+    "static/media/fondoAzul.jpg": "/Matias-Ramos/or-automotores-react.git/static/media/fondoAzul.65342bfd0f2b5fd22b45.jpg",
+    "static/media/logo.png": "/Matias-Ramos/or-automotores-react.git/static/media/logo.f5c222b752af9e35bcbe.png",
+    "static/media/mercado-libre.svg": "/Matias-Ramos/or-automotores-react.git/static/media/mercado-libre.6bcce05915bf001304b0885bee97e558.svg",
+    "index.html": "/Matias-Ramos/or-automotores-react.git/index.html",
+    "main.4ba03304.css.map": "/Matias-Ramos/or-automotores-react.git/static/css/main.4ba03304.css.map",
+    "main.ee02cf92.js.map": "/Matias-Ramos/or-automotores-react.git/static/js/main.ee02cf92.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4ba03304.css",
+    "static/js/main.ee02cf92.js"
+  ]
+}
