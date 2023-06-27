@@ -26,7 +26,8 @@
     "react-scripts": "5.0.1",
     "sass": "^1.58.1",
     "web-vitals": "^2.1.4",
-    "webpack": "^5.76.2"
+    "webpack": "^5.76.2",
+    "semver": ">=7.5.2"
   },
   "scripts": {
     "start": "react-scripts start",
