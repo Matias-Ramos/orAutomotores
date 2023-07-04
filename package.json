@@ -25,9 +25,10 @@
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "sass": "^1.58.1",
+    "semver": "^7.5.3",
     "web-vitals": "^2.1.4",
     "webpack": "^5.76.2",
-    "semver": ">=7.5.2"
+    "word-wrap": "^1.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
