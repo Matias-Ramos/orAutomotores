@@ -35,7 +35,8 @@ function GalleryContainer() {
         priceRange.current = getPriceRange(svCarList.current);
       }
       const array = filterData(query, svCarList.current);
-      setStock(array);
+      const sortedStock = [...array].sort((a, b) => b.priceUsd - a.priceUsd);
+      setStock(sortedStock);
     };
     updateStockState();
   }, [query]);
