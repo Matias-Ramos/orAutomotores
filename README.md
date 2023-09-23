@@ -35,8 +35,7 @@ app.netlify.com (from ghPages)
 The stock of vehicles is updated through the noSQL database Firestore (a Google service).
 
 ### Project execution
-
-Run "npm start" on the IDE terminal. The app should automatically open in development mode. Otherwise, you can open the app manually by accessing the host [http://localhost:3000] in the browser.
+Clone the repository. Run "npm install". Run "npm start" on the IDE terminal. The app should automatically open in development mode. Otherwise, you can open the app manually by accessing the host [http://localhost:3000] in the browser.
 
 ### Project initialization
 The project was initialized with "npx create-react-app".
