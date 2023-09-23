@@ -1,14 +1,16 @@
-# Nombre del proyecto
+# Project name
 OR automotores
 
-## Sobre el proyecto
+## About it
 
-### Motivo
-El cliente ha solicitado la solución a un problema que se le presenta con regularidad: 
-Cuando un cliente le consulta por los autos que posee en stock, el cliente debe responder con múltiples links individuales de MercadoL y/o imgs.
+### Purpose
 
-### Solución
-Esta es una solución de React sencilla, de pocos elementos, que centraliza la totalidad del stock de vehículos en una única página web y redirige al cliente al link de MercadoLibre donde podrá encontrar mas información referida al auto que sea de su interés.
+The client requested a solution for a recurring problem:
+When a customer asked my client about the cars in stock, the client had to respond with multiple ecommerce links or with individual images.
+
+### The Solution
+
+This is a simple React solution, with few elements, that centralizes the entire vehicle stock on a single web page and redirects the customer to the ecommerce link where they can find more information related to the car that is of their interest.
 
 ### Link
 orautomotores.com.ar
@@ -17,23 +19,24 @@ orautomotores.com.ar
 app.netlify.com (from ghPages)
 
 
-## Código
+## Code
 
-### Componentes principales del sitio
-1. Header - Banner
-2. Galería - Filtros
-3. Galería - Cards
-4. Footer - Contacto
+### Core components
+1. Header.jsx
+2. GalleryContainer.jsx
+3. ContactUsContainer.jsx
 
 ### Frameworks
-- react-bootstrap
+- react-bootstrap 
 - MaterialUi
 
-### Método de actualización de stock
-El stock de vehículos se actualiza a traves del Firestore (servicio de Firebase, Google) propio de la cuenta gmail de or-automotores.
+### Stock update method
 
-### Ejecución del proyecto
-Ejecutar "npm start" en la terminal del IDE. Acto siguiente la app debería abrirse automáticamente en modo desarrollo. De lo contrario, puede abrirse la app manualmente accediendo al host [http://localhost:3000] en el navegador. 
+The stock of vehicles is updated through the noSQL database Firestore (a Google service).
 
-### Inicializacion del proyecto
-El proyecto fue inicializado con "npx create-react-app".
+### Project execution
+
+Run "npm start" on the IDE terminal. The app should automatically open in development mode. Otherwise, you can open the app manually by accessing the host [http://localhost:3000] in the browser.
+
+### Project initialization
+The project was initialized with "npx create-react-app".

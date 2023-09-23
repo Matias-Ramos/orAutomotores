@@ -1,7 +1,7 @@
 const Signature = () => (
   <section id="signatureSection">
     <i>
-      FrontEnd Developer:{" "}
+      Developer:{" "}
       <a
         href="https://www.linkedin.com/in/matias-ramos-computacion/"
         target="_blank"
