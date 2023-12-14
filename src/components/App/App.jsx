@@ -5,9 +5,6 @@ import Header from "../Header/Header.jsx";
 import GalleryContainer from "../Gallery/GalleryContainer.jsx";
 import ContactUsContainer from "../Footer/ContactUsContainer.jsx";
 import Signature from "../Signature/Signature.jsx";
-// import QueryClientProvider from "../../context/QueryClientProvider.jsx";
-// import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-
 import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient();
