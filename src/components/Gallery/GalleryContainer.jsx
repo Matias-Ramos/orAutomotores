@@ -76,7 +76,7 @@ function GalleryContainer() {
       </QyParamsCtxtProvider>
       { isLoading && <Loading /> }
       { useQueryError && <Error errorMsg={useQueryError} /> }
-      { (!isLoading && relativeCarList.current) && <CardsMapper stock={stock} /> }
+      { (!useQueryError && !isLoading && relativeCarList.current) && <CardsMapper stock={stock} /> }
     </main>
   );
 }
