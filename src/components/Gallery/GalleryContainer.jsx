@@ -41,7 +41,8 @@ function GalleryContainer() {
       return carList;
     },
     staleTime: 60*1000,
-    retry: 3
+    retry: 3,
+    retryDelay: 3000
   })
 
   /********************* */
