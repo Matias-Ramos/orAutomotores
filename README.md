@@ -10,10 +10,11 @@ When a customer asked my client about the cars in stock, the client had to respo
 
 ### The Solution
 
-This is a simple React solution, with few elements, that centralizes the entire vehicle stock on a single web page and redirects the customer to the ecommerce link where they can find more information related to the car that is of their interest.
+This is a simple React solution with very few components that fetches data from a noSql Firebase DB.
+It centralizes the entire vehicle stock on a single web page, with the solely purpose to redirect the customer to the ecommerce link where they can find more information related to the car that is of their interest.
 
 ### Link
-orautomotores.com.ar
+https://www.orautomotores.com.ar
 
 ### Hosting
 app.netlify.com (from ghPages)
