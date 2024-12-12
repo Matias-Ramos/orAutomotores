@@ -5,12 +5,14 @@ import {
   NavBarMobile,
   Loading,
   QyParamsCtxtProvider,
+  Error,
   // Hooks
   useState,
   useEffect,
   useMemo,
   useRef,
   useLocation,
+  useQuery,
   // Functions
   modelStockData,
   filterData,
@@ -19,27 +21,46 @@ import {
 } from "./tools.js";
 
 function GalleryContainer() {
-  let svCarList = useRef([]);
+
+  /********************* */
+  // Variables
+
+  let relativeCarList = useRef([]);
   let priceRange = useRef({});
   const [stock, setStock] = useState([]);
   const { search } = useLocation();
   const query = useMemo(() => new URLSearchParams(search), [search]);
+  
+  /********************* */
+  // useQuery data fetching
 
-  //refreshes the stock based on query params update
+  const { data: rawCarsList, error: useQueryError, isLoading } = useQuery({
+    queryKey: ["stock"],
+    queryFn: async() => {
+      const carList = await getSvCarList();
+      return carList;
+    },
+    staleTime: 60*1000,
+    retry: 3
+  })
+
+  /********************* */
+  // Persist & Format the data
+
   useEffect(() => {
-    const updateStockState = async () => {
-      // fetches svData only if the app has just been opened.
-      if (svCarList.current.length === 0) {
-        svCarList.current = await getSvCarList();
-        svCarList.current = modelStockData(svCarList.current);
-        priceRange.current = getPriceRange(svCarList.current);
-      }
-      const array = filterData(query, svCarList.current);
-      const sortedStock = [...array].sort((a, b) => b.priceUsd - a.priceUsd);
-      setStock(sortedStock);
-    };
-    updateStockState();
-  }, [query]);
+    if(relativeCarList.current?.length===0 && rawCarsList){
+      relativeCarList.current = rawCarsList;
+      relativeCarList.current = modelStockData(relativeCarList.current);
+      priceRange.current = getPriceRange(relativeCarList.current);
+    }
+
+    const array = filterData(query, relativeCarList.current);
+    const sortedStock = [...array].sort((a, b) => b.priceUsd - a.priceUsd);
+    setStock(sortedStock);
+  },[rawCarsList, query])
+
+  /********************* */
+  // Render
 
   return (
     <main id="gallerySection">
@@ -53,7 +74,9 @@ function GalleryContainer() {
           priceRange={priceRange.current}
         />
       </QyParamsCtxtProvider>
-      {svCarList.current.length === 0 ? <Loading /> : <CardsMapper stock={stock} /> }
+      { isLoading && <Loading /> }
+      { useQueryError && <Error errorMsg={useQueryError} /> }
+      { (!isLoading && relativeCarList.current) && <CardsMapper stock={stock} /> }
     </main>
   );
 }

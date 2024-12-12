@@ -4,6 +4,7 @@ getUsdCurrentPrice().then((value) => (USDpriceToday = value));
 
 function declareDataTypes(car) {
   // The user may not complete all of the fields. Some properties of the car may be empty.
+  // console.log(`car["price"] is ${car["price"]} and this is parsed: ${parseInt(car["price"])}`)
   car["price"] = parseInt(car["price"]) || null;
   car["year"] = parseInt(car["year"]) || null;
   car["km"] = car["km"] !== "" ? parseInt(car["km"]) : null; // no nulling coalescing due to 0km possibility.
@@ -18,12 +19,12 @@ function modelStockData(stock) {
     car = declareDataTypes(car);
     switch (true) {
       // I assume price < 500.000 ? dollars : pesos
-      case Number.isInteger(car.price) && car.price < 500000:
+      case (Number.isInteger(car.price) && car.price < 500000):
         car["sellsInDollars"] = true;
         car["priceArs"] = car.price * USDpriceToday;
         car["priceUsd"] = car.price;
         break;
-      case Number.isInteger(car.price) && car.price > 500000:
+      case (Number.isInteger(car.price) && car.price > 500000):
         car["sellsInDollars"] = false;
         car["priceArs"] = car.price;
         car["priceUsd"] = Math.round(car.price / USDpriceToday);
